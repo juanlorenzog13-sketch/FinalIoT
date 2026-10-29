@@ -23,7 +23,9 @@ st.markdown(
     """
     <style>
 
-    /* FONDO GENERAL */
+    /* =====================================================
+       FONDO GENERAL
+    ===================================================== */
 
     html,
     body,
@@ -34,7 +36,9 @@ st.markdown(
     }
 
 
-    /* TEXTO GENERAL */
+    /* =====================================================
+       TEXTO GENERAL
+    ===================================================== */
 
     .stApp,
     .stApp p,
@@ -50,7 +54,9 @@ st.markdown(
     }
 
 
-    /* SIDEBAR */
+    /* =====================================================
+       SIDEBAR
+    ===================================================== */
 
     [data-testid="stSidebar"] {
         background-color: #EAF4F7 !important;
@@ -71,7 +77,9 @@ st.markdown(
     }
 
 
-    /* CAMPO DE FECHAS */
+    /* =====================================================
+       CAMPO DE FECHAS
+    ===================================================== */
 
     [data-testid="stSidebar"]
     [data-testid="stDateInput"]
@@ -92,8 +100,6 @@ st.markdown(
     div[data-baseweb="base-input"] {
         background-color: #111820 !important;
     }
-
-    /* TEXTO DE FECHAS BLANCO */
 
     [data-testid="stSidebar"]
     [data-testid="stDateInput"]
@@ -131,7 +137,9 @@ st.markdown(
     }
 
 
-    /* SELECTBOX */
+    /* =====================================================
+       SELECTBOX
+    ===================================================== */
 
     [data-testid="stSidebar"]
     div[data-baseweb="select"] > div {
@@ -155,7 +163,9 @@ st.markdown(
     }
 
 
-    /* MENÚ DESPLEGABLE */
+    /* =====================================================
+       MENÚS DESPLEGABLES
+    ===================================================== */
 
     div[data-baseweb="popover"],
     div[data-baseweb="menu"],
@@ -177,7 +187,9 @@ st.markdown(
     }
 
 
-    /* CALENDARIO */
+    /* =====================================================
+       CALENDARIO
+    ===================================================== */
 
     div[data-baseweb="calendar"] {
         background-color: #FFFFFF !important;
@@ -190,7 +202,9 @@ st.markdown(
     }
 
 
-    /* MÉTRICAS */
+    /* =====================================================
+       MÉTRICAS
+    ===================================================== */
 
     [data-testid="stMetric"] {
         background-color: #FFFFFF !important;
@@ -210,20 +224,45 @@ st.markdown(
     }
 
 
-    /* CAJAS INFORMATIVAS */
+    /* =====================================================
+       TARJETAS GENERALES
+    ===================================================== */
 
     .info-card {
         background-color: #FFFFFF;
         border: 1px solid #DCE7EC;
         border-radius: 14px;
-        padding: 16px;
-        margin-bottom: 12px;
+        padding: 18px;
+        margin-bottom: 14px;
         color: #1F2933 !important;
         box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+        line-height: 1.55;
     }
 
 
-    /* TARJETAS DE INSIGHT */
+    /* =====================================================
+       TARJETAS DEL TUTORIAL
+    ===================================================== */
+
+    .tutorial-card {
+        background-color: #FFFFFF;
+        border: 1px solid #DCE7EC;
+        border-radius: 14px;
+        padding: 18px;
+        min-height: 170px;
+        color: #1F2933 !important;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+    }
+
+    .tutorial-card h3 {
+        margin-top: 0;
+        color: #183B4E !important;
+    }
+
+
+    /* =====================================================
+       TARJETAS DE INSIGHTS
+    ===================================================== */
 
     .insight-card {
         background-color: #EEF7FA;
@@ -240,24 +279,20 @@ st.markdown(
         color: #102A36 !important;
     }
 
-
     .insight-red {
         background-color: #FFF1F1;
         border-left: 5px solid #E57373;
     }
-
 
     .insight-blue {
         background-color: #EEF6FD;
         border-left: 5px solid #5E9ED6;
     }
 
-
     .insight-yellow {
         background-color: #FFF8E8;
         border-left: 5px solid #E4A94F;
     }
-
 
     .insight-green {
         background-color: #EFF9F2;
@@ -265,7 +300,9 @@ st.markdown(
     }
 
 
-    /* EXPANDERS */
+    /* =====================================================
+       EXPANDERS
+    ===================================================== */
 
     [data-testid="stExpander"] {
         background-color: #FFFFFF !important;
@@ -274,7 +311,9 @@ st.markdown(
     }
 
 
-    /* DIVISORES */
+    /* =====================================================
+       DIVISORES
+    ===================================================== */
 
     hr {
         border-color: #CBDDE3 !important;
@@ -287,7 +326,7 @@ st.markdown(
 
 
 # =========================================================
-# COLORES DE GRÁFICAS
+# COLORES DE LAS GRÁFICAS
 # =========================================================
 
 GRAPH_TEXT = "#102A36"
@@ -297,14 +336,13 @@ GRAPH_BACKGROUND = "#FFFFFF"
 
 
 # =========================================================
-# FUNCIÓN DE ESTILO PARA GRÁFICAS
+# ESTILO GENERAL DE GRÁFICAS
 # =========================================================
 
 def style_chart(fig):
 
     fig.update_layout(
         template="plotly_white",
-
         paper_bgcolor=GRAPH_BACKGROUND,
         plot_bgcolor=GRAPH_BACKGROUND,
 
@@ -330,7 +368,6 @@ def style_chart(fig):
         hoverlabel=dict(
             bgcolor="#FFFFFF",
             bordercolor="#90A4AE",
-
             font=dict(
                 color="#000000",
                 size=14
@@ -395,7 +432,7 @@ def style_chart(fig):
 
 
 # =========================================================
-# FUNCIÓN PARA MOSTRAR INSIGHTS
+# TARJETAS DE INSIGHT
 # =========================================================
 
 def insight(
@@ -441,12 +478,13 @@ def load_data():
         errors="coerce"
     )
 
-    # Convertir a hora de Colombia
+    # Convertir hora UTC a Colombia
     df["timestamp_local"] = (
         df["timestamp"]
         .dt.tz_convert("America/Bogota")
     )
 
+    # Variables numéricas
     df["heart_rate_bpm"] = pd.to_numeric(
         df["heart_rate_bpm"],
         errors="coerce"
@@ -462,6 +500,7 @@ def load_data():
         errors="coerce"
     )
 
+    # Normalizar estado
     df["measurement_status"] = (
         df["measurement_status"]
         .astype(str)
@@ -469,6 +508,7 @@ def load_data():
         .str.lower()
     )
 
+    # Variables auxiliares
     df["date"] = (
         df["timestamp_local"]
         .dt.date
@@ -509,25 +549,180 @@ st.title(
 )
 
 
+# =========================================================
+# EXPLICACIÓN GENERAL
+# =========================================================
+
 st.markdown(
     """
     <div class="info-card">
 
-    <b>¿Qué muestra este dashboard?</b><br><br>
+    <h3 style="margin-top:0;">👋 ¿Qué es esta aplicación?</h3>
 
-    Este tablero permite analizar las mediciones registradas
-    por un tótem IoT utilizado por estudiantes.
+    Este dashboard permite explorar las mediciones registradas por un
+    <b>tótem IoT de bienestar</b> utilizado por estudiantes.
 
-    Se estudian principalmente la
-    <b>frecuencia cardíaca</b>,
-    la <b>saturación estimada de oxígeno</b>,
-    la cantidad de usos del dispositivo y
-    la calidad de las mediciones.
+    <br><br>
+
+    La aplicación analiza información como:
+
+    <br><br>
+
+    ❤️ <b>Frecuencia cardíaca (BPM)</b><br>
+    🫁 <b>Saturación estimada de oxígeno (SpO₂)</b><br>
+    📶 <b>Calidad de señal del sensor</b><br>
+    🎓 <b>Cantidad de estudiantes y usos del tótem</b><br>
+    ✅ <b>Mediciones válidas e inválidas</b><br>
+    📅 <b>Fechas y horarios de utilización</b>
+
+    <br><br>
+
+    Todos los indicadores, gráficas e insights que aparecen en pantalla
+    se calculan automáticamente a partir de los registros del archivo CSV.
 
     </div>
     """,
     unsafe_allow_html=True
 )
+
+
+# =========================================================
+# TUTORIAL DESPLEGABLE
+# =========================================================
+
+with st.expander(
+    "📖 ¿Cómo funciona este dashboard?",
+    expanded=False
+):
+
+    st.markdown(
+        """
+        ### 🔎 1. Aplica los filtros
+
+        En la barra lateral izquierda puedes escoger qué información
+        deseas consultar.
+
+        Cuando modificas un filtro, **los indicadores, las gráficas y los
+        resultados se actualizan automáticamente**.
+
+        ---
+
+        ### 📌 2. Revisa los indicadores generales
+
+        En la parte superior encontrarás:
+
+        - 📊 **Mediciones:** cantidad de registros seleccionados.
+        - 🎓 **Estudiantes:** número de estudiantes diferentes.
+        - ❤️ **BPM promedio:** promedio de frecuencia cardíaca de las
+          mediciones válidas.
+        - 🫁 **SpO₂ promedio:** promedio de saturación estimada de oxígeno
+          de las mediciones válidas.
+        - ⚠️ **Inválidas:** porcentaje de mediciones clasificadas como
+          inválidas.
+
+        ---
+
+        ### 📈 3. Explora las gráficas
+
+        Las gráficas permiten identificar:
+
+        - Días con mayor utilización del tótem.
+        - Horarios con mayor actividad.
+        - Distribución de las mediciones de BPM.
+        - Distribución de las mediciones de SpO₂.
+        - Proporción de registros válidos e inválidos.
+        - Comportamiento de la calidad de señal.
+
+        Debajo de las gráficas encontrarás **insights automáticos**
+        que resumen los resultados más importantes.
+
+        ---
+
+        ### 🎓 4. Consulta un estudiante
+
+        La sección de seguimiento individual permite observar:
+
+        - Cantidad de mediciones.
+        - Primera medición.
+        - Última medición.
+        - Evolución de BPM.
+        - Evolución de SpO₂.
+
+        ---
+
+        ### 🧠 5. Revisa los hallazgos
+
+        Al final del dashboard encontrarás un resumen automático con
+        algunos de los resultados más relevantes obtenidos a partir de
+        los filtros seleccionados.
+        """
+    )
+
+
+# =========================================================
+# GUÍA RÁPIDA
+# =========================================================
+
+st.markdown(
+    "### 🧭 Guía rápida de uso"
+)
+
+
+guide1, guide2, guide3 = st.columns(3)
+
+
+with guide1:
+
+    st.markdown(
+        """
+        <div class="tutorial-card">
+
+        <h3>1️⃣ Filtra</h3>
+
+        Usa el panel de la izquierda para seleccionar
+        <b>fechas, estudiantes o estado de las mediciones</b>.
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+with guide2:
+
+    st.markdown(
+        """
+        <div class="tutorial-card">
+
+        <h3>2️⃣ Observa</h3>
+
+        Los indicadores, gráficas e insights
+        <b>cambian automáticamente</b> según tu selección.
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+with guide3:
+
+    st.markdown(
+        """
+        <div class="tutorial-card">
+
+        <h3>3️⃣ Explora</h3>
+
+        Compara períodos, revisa estudiantes específicos
+        y descubre patrones de utilización del tótem.
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+st.markdown("---")
 
 
 # =========================================================
@@ -539,8 +734,23 @@ st.sidebar.header(
 )
 
 
+st.sidebar.markdown(
+    """
+    **¿Cómo funcionan?**
+
+    Cambia cualquiera de las opciones de abajo.
+
+    📊 Indicadores  
+    📈 Gráficas  
+    💡 Insights  
+
+    se actualizarán automáticamente.
+    """
+)
+
+
 # =========================================================
-# FECHAS
+# FILTRO DE FECHAS
 # =========================================================
 
 min_date = df["date"].min()
@@ -556,7 +766,12 @@ date_selection = st.sidebar.date_input(
     ),
 
     min_value=min_date,
-    max_value=max_date
+    max_value=max_date,
+
+    help=(
+        "Selecciona la fecha inicial y final "
+        "del período que deseas analizar."
+    )
 )
 
 
@@ -587,7 +802,7 @@ else:
 
 
 # =========================================================
-# ESTUDIANTE
+# FILTRO DE ESTUDIANTE
 # =========================================================
 
 student_options = (
@@ -604,12 +819,18 @@ student_options = (
 
 selected_student = st.sidebar.selectbox(
     "🎓 Estudiante",
-    student_options
+
+    student_options,
+
+    help=(
+        "Selecciona 'Todos' para analizar a todos los estudiantes "
+        "o escoge un estudiante específico."
+    )
 )
 
 
 # =========================================================
-# ESTADO
+# FILTRO DE ESTADO
 # =========================================================
 
 selected_status = st.sidebar.selectbox(
@@ -619,7 +840,21 @@ selected_status = st.sidebar.selectbox(
         "Todos",
         "Válidas",
         "Inválidas"
-    ]
+    ],
+
+    help=(
+        "Permite mostrar todas las mediciones "
+        "o únicamente las válidas o inválidas."
+    )
+)
+
+
+st.sidebar.markdown("---")
+
+
+st.sidebar.info(
+    "💡 Prueba diferentes combinaciones de filtros "
+    "para observar cómo cambian los resultados."
 )
 
 
@@ -665,7 +900,7 @@ elif selected_status == "Inválidas":
 if filtered.empty:
 
     st.warning(
-        "No hay registros que coincidan "
+        "⚠️ No hay registros que coincidan "
         "con los filtros seleccionados."
     )
 
@@ -679,7 +914,7 @@ valid_filtered = filtered[
 
 
 # =========================================================
-# INDICADORES
+# INDICADORES GENERALES
 # =========================================================
 
 st.subheader(
@@ -735,24 +970,30 @@ col1.metric(
     f"{total_measurements:,}"
 )
 
+
 col2.metric(
     "🎓 Estudiantes",
     unique_students
 )
 
+
 col3.metric(
     "❤️ BPM promedio",
+
     f"{avg_hr:.1f}"
     if avg_hr is not None
     else "N/D"
 )
 
+
 col4.metric(
     "🫁 SpO₂ promedio",
+
     f"{avg_spo2:.1f} %"
     if avg_spo2 is not None
     else "N/D"
 )
+
 
 col5.metric(
     "⚠️ Inválidas",
@@ -761,8 +1002,8 @@ col5.metric(
 
 
 st.caption(
-    "Los promedios de BPM y SpO₂ utilizan "
-    "únicamente mediciones válidas."
+    "💡 Los promedios de BPM y SpO₂ utilizan "
+    "únicamente mediciones marcadas como válidas."
 )
 
 
@@ -771,7 +1012,7 @@ st.markdown("---")
 
 # =========================================================
 # GRÁFICA 1
-# USO POR DÍA
+# USO DEL TÓTEM POR DÍA
 # =========================================================
 
 st.subheader(
@@ -822,11 +1063,10 @@ st.plotly_chart(
 )
 
 
-# Insight de uso diario
-
 peak_day_row = measurements_day.loc[
     measurements_day["Mediciones"].idxmax()
 ]
+
 
 peak_day = peak_day_row["date"]
 
@@ -834,10 +1074,12 @@ peak_day_measurements = int(
     peak_day_row["Mediciones"]
 )
 
+
 daily_average = (
     measurements_day["Mediciones"]
     .mean()
 )
+
 
 peak_day_percentage = (
     peak_day_measurements
@@ -853,8 +1095,9 @@ insight(
         f"El día con mayor uso fue "
         f"<strong>{peak_day.strftime('%d/%m/%Y')}</strong>, "
         f"con <strong>{peak_day_measurements} mediciones</strong>. "
-        f"Esto representa el <strong>{peak_day_percentage:.1f}%</strong> "
-        f"de todas las mediciones visibles. "
+        f"Esto representa el "
+        f"<strong>{peak_day_percentage:.1f}%</strong> "
+        f"de las mediciones visibles. "
         f"El promedio diario fue de "
         f"<strong>{daily_average:.1f} mediciones</strong>."
     )
@@ -862,7 +1105,7 @@ insight(
 
 
 # =========================================================
-# GRÁFICAS BPM Y SPO2
+# INDICADORES FISIOLÓGICOS
 # =========================================================
 
 st.subheader(
@@ -925,39 +1168,29 @@ with graph1:
         )
 
 
-        # Estadísticas BPM
+        if not hr_data.empty:
 
-        hr_mean = hr_data.mean()
-
-        hr_median = hr_data.median()
-
-        hr_q1 = hr_data.quantile(0.25)
-
-        hr_q3 = hr_data.quantile(0.75)
+            hr_mean = hr_data.mean()
+            hr_median = hr_data.median()
+            hr_q1 = hr_data.quantile(0.25)
+            hr_q3 = hr_data.quantile(0.75)
 
 
-        insight(
-            "❤️",
-            "¿Qué nos muestra?",
-            (
-                f"Las mediciones válidas tienen un promedio de "
-                f"<strong>{hr_mean:.1f} BPM</strong> "
-                f"y una mediana de "
-                f"<strong>{hr_median:.1f} BPM</strong>. "
-                f"El 50% central de los registros se encuentra "
-                f"aproximadamente entre "
-                f"<strong>{hr_q1:.1f} y {hr_q3:.1f} BPM</strong>."
-            ),
-            "insight-red"
-        )
-
-
-    else:
-
-        st.info(
-            "No hay mediciones válidas "
-            "de frecuencia cardíaca."
-        )
+            insight(
+                "❤️",
+                "¿Qué muestra esta gráfica?",
+                (
+                    f"El promedio es de "
+                    f"<strong>{hr_mean:.1f} BPM</strong> "
+                    f"y la mediana es de "
+                    f"<strong>{hr_median:.1f} BPM</strong>. "
+                    f"El 50% central de las mediciones se encuentra "
+                    f"aproximadamente entre "
+                    f"<strong>{hr_q1:.1f} y "
+                    f"{hr_q3:.1f} BPM</strong>."
+                ),
+                "insight-red"
+            )
 
 
 # =========================================================
@@ -1012,41 +1245,32 @@ with graph2:
         )
 
 
-        # Estadísticas SpO2
+        if not spo2_data.empty:
 
-        spo2_mean = spo2_data.mean()
-
-        spo2_median = spo2_data.median()
-
-        spo2_q1 = spo2_data.quantile(0.25)
-
-        spo2_q3 = spo2_data.quantile(0.75)
+            spo2_mean = spo2_data.mean()
+            spo2_median = spo2_data.median()
+            spo2_q1 = spo2_data.quantile(0.25)
+            spo2_q3 = spo2_data.quantile(0.75)
 
 
-        insight(
-            "🫁",
-            "¿Qué nos muestra?",
-            (
-                f"La SpO₂ estimada promedio de las mediciones válidas "
-                f"es de <strong>{spo2_mean:.1f}%</strong>, "
-                f"con una mediana de "
-                f"<strong>{spo2_median:.1f}%</strong>. "
-                f"El 50% central de los valores está entre "
-                f"<strong>{spo2_q1:.1f}% y {spo2_q3:.1f}%</strong>."
-            ),
-            "insight-blue"
-        )
-
-
-    else:
-
-        st.info(
-            "No hay mediciones válidas de SpO₂."
-        )
+            insight(
+                "🫁",
+                "¿Qué muestra esta gráfica?",
+                (
+                    f"La SpO₂ estimada promedio es de "
+                    f"<strong>{spo2_mean:.1f}%</strong>, "
+                    f"con una mediana de "
+                    f"<strong>{spo2_median:.1f}%</strong>. "
+                    f"El 50% central de las mediciones está entre "
+                    f"<strong>{spo2_q1:.1f}% y "
+                    f"{spo2_q3:.1f}%</strong>."
+                ),
+                "insight-blue"
+            )
 
 
 # =========================================================
-# HORARIOS Y ESTADO
+# HORARIOS Y CALIDAD
 # =========================================================
 
 st.subheader(
@@ -1058,7 +1282,7 @@ graph3, graph4 = st.columns(2)
 
 
 # =========================================================
-# HORAS DE USO
+# USO POR HORA
 # =========================================================
 
 with graph3:
@@ -1116,13 +1340,16 @@ with graph3:
         hourly["Mediciones"].idxmax()
     ]
 
+
     peak_hour = int(
         peak_hour_row["hour"]
     )
 
+
     peak_hour_count = int(
         peak_hour_row["Mediciones"]
     )
+
 
     peak_hour_percentage = (
         peak_hour_count
@@ -1141,14 +1368,14 @@ with graph3:
             f"con <strong>{peak_hour_count} mediciones</strong>. "
             f"Representa aproximadamente el "
             f"<strong>{peak_hour_percentage:.1f}%</strong> "
-            f"de la actividad mostrada."
+            f"de la actividad visible."
         ),
         "insight-yellow"
     )
 
 
 # =========================================================
-# CALIDAD DE LAS MEDICIONES
+# VÁLIDAS E INVÁLIDAS
 # =========================================================
 
 with graph4:
@@ -1240,8 +1467,8 @@ with graph4:
         (
             f"De las <strong>{total_measurements} mediciones</strong>, "
             f"<strong>{valid_count}</strong> fueron válidas "
-            f"(<strong>{valid_percentage:.1f}%</strong>) "
-            f"y <strong>{invalid_count}</strong> fueron inválidas "
+            f"(<strong>{valid_percentage:.1f}%</strong>) y "
+            f"<strong>{invalid_count}</strong> fueron inválidas "
             f"(<strong>{invalid_percentage:.1f}%</strong>)."
         ),
         "insight-green"
@@ -1298,6 +1525,7 @@ fig_signal = px.box(
 
 style_chart(fig_signal)
 
+
 fig_signal.update_layout(
     showlegend=False
 )
@@ -1308,8 +1536,6 @@ st.plotly_chart(
     use_container_width=True
 )
 
-
-# Insight calidad señal
 
 signal_valid = (
     filtered.loc[
@@ -1339,6 +1565,7 @@ if (
         signal_valid.median()
     )
 
+
     median_invalid = (
         signal_invalid.median()
     )
@@ -1353,39 +1580,35 @@ if (
     if difference > 0:
 
         comparison_text = (
-            f"La mediana de señal de los registros válidos "
-            f"es <strong>{median_valid:.3f}</strong>, "
-            f"mientras que la de los inválidos es "
+            f"La mediana de calidad de señal de las mediciones "
+            f"válidas es <strong>{median_valid:.3f}</strong>, "
+            f"mientras que en las inválidas es "
             f"<strong>{median_invalid:.3f}</strong>. "
-            f"En estos datos, las mediciones válidas presentan "
-            f"una mediana de señal "
+            f"Las mediciones válidas presentan una mediana "
             f"<strong>{difference:.3f} puntos mayor</strong>."
         )
 
     elif difference < 0:
 
         comparison_text = (
-            f"La mediana de señal de los registros válidos "
-            f"es <strong>{median_valid:.3f}</strong>, "
-            f"mientras que la de los inválidos es "
-            f"<strong>{median_invalid:.3f}</strong>. "
-            f"En este filtro, la diferencia observada es de "
-            f"<strong>{abs(difference):.3f} puntos</strong> "
-            f"a favor de los registros inválidos."
+            f"La mediana de calidad de señal de las mediciones "
+            f"válidas es <strong>{median_valid:.3f}</strong> y "
+            f"la de las inválidas es "
+            f"<strong>{median_invalid:.3f}</strong>."
         )
 
     else:
 
         comparison_text = (
-            f"Las mediciones válidas e inválidas tienen "
-            f"la misma mediana de calidad de señal: "
+            f"Ambos grupos presentan una mediana de "
+            f"calidad de señal de "
             f"<strong>{median_valid:.3f}</strong>."
         )
 
 
     insight(
         "📡",
-        "Relación con la calidad de señal",
+        "Resultado de calidad de señal",
         comparison_text
     )
 
@@ -1404,10 +1627,11 @@ else:
             "📡",
             "Calidad de señal",
             (
-                f"La mediana de calidad de señal de los registros "
-                f"mostrados es <strong>{signal_all.median():.3f}</strong>. "
-                f"La escala va de 0 a 1, donde un valor más alto "
-                f"representa una mejor calidad de señal."
+                f"La mediana de calidad de señal de los "
+                f"registros mostrados es "
+                f"<strong>{signal_all.median():.3f}</strong>. "
+                f"La escala va de 0 a 1, donde los valores "
+                f"más altos representan mejor calidad de señal."
             )
         )
 
@@ -1622,13 +1846,13 @@ if available_students:
                 "❤️",
                 "Resumen del estudiante",
                 (
-                    f"En sus mediciones válidas, "
-                    f"<strong>{individual_student}</strong> registra "
-                    f"un promedio de "
+                    f"En las mediciones válidas de "
+                    f"<strong>{individual_student}</strong>, "
+                    f"el promedio es de "
                     f"<strong>{student_valid_hr.mean():.1f} BPM</strong>. "
-                    f"El valor mínimo observado es "
+                    f"Los valores registrados van desde "
                     f"<strong>{student_valid_hr.min():.1f}</strong> "
-                    f"y el máximo es "
+                    f"hasta "
                     f"<strong>{student_valid_hr.max():.1f} BPM</strong>."
                 ),
                 "insight-red"
@@ -1710,7 +1934,7 @@ if available_students:
                     f"<strong>{individual_student}</strong>, "
                     f"la SpO₂ estimada promedio es "
                     f"<strong>{student_valid_spo2.mean():.1f}%</strong>. "
-                    f"Los valores observados van desde "
+                    f"Los valores registrados van desde "
                     f"<strong>{student_valid_spo2.min():.1f}%</strong> "
                     f"hasta "
                     f"<strong>{student_valid_spo2.max():.1f}%</strong>."
@@ -1731,7 +1955,7 @@ st.markdown("---")
 
 
 # =========================================================
-# ANÁLISIS GENERAL
+# PRINCIPALES HALLAZGOS
 # =========================================================
 
 st.subheader(
@@ -1775,22 +1999,30 @@ top_hour_count = int(
 
 student_counts = (
     filtered["student_id"]
+    .dropna()
     .value_counts()
 )
 
 
-top_student = (
-    student_counts.index[0]
-)
+if not student_counts.empty:
+
+    top_student = (
+        student_counts.index[0]
+    )
 
 
-top_student_count = int(
-    student_counts.iloc[0]
-)
+    top_student_count = int(
+        student_counts.iloc[0]
+    )
+
+else:
+
+    top_student = "Sin datos"
+    top_student_count = 0
 
 
 # =========================================================
-# HALLAZGOS EN TARJETAS
+# TARJETAS RESUMEN
 # =========================================================
 
 h1, h2, h3 = st.columns(3)
@@ -1836,7 +2068,7 @@ with h3:
 
 
 # =========================================================
-# INTERPRETACIÓN GENERAL
+# LECTURA GENERAL
 # =========================================================
 
 st.markdown(
@@ -1856,10 +2088,10 @@ st.markdown(
 - 🎓 **{top_student}** fue el estudiante con mayor cantidad de usos,
   con **{top_student_count} registros**.
 
-- ✅ **{valid_percentage:.1f}%** de los registros mostrados son
-  mediciones válidas.
+- ✅ **{valid_percentage:.1f}%** de los registros mostrados
+  corresponden a mediciones válidas.
 
-- ⚠️ **{invalid_percentage:.1f}%** de los registros corresponden
+- ⚠️ **{invalid_percentage:.1f}%** corresponden
   a mediciones inválidas.
 """
 )
@@ -1880,16 +2112,17 @@ st.warning(
     mediciones registradas, pero no permiten determinar por sí solos
     el estado general de salud de una persona.
 
-    El sensor MAX30102 del ejercicio no debe considerarse un
-    dispositivo médico validado.
+    El sensor MAX30102 utilizado en este ejercicio no debe
+    considerarse un dispositivo médico validado.
 
-    Este dashboard no realiza diagnósticos ni clasificaciones clínicas.
+    Este dashboard no realiza diagnósticos médicos ni
+    clasificaciones clínicas.
     """
 )
 
 
 # =========================================================
-# TABLA
+# TABLA DE DATOS
 # =========================================================
 
 with st.expander(
