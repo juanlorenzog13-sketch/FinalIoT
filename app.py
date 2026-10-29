@@ -23,9 +23,7 @@ st.markdown(
     """
     <style>
 
-    /* =====================================================
-       FONDO GENERAL
-    ===================================================== */
+    /* FONDO GENERAL */
 
     html,
     body,
@@ -36,9 +34,7 @@ st.markdown(
     }
 
 
-    /* =====================================================
-       TEXTO GENERAL
-    ===================================================== */
+    /* TEXTO GENERAL */
 
     .stApp,
     .stApp p,
@@ -48,28 +44,22 @@ st.markdown(
         opacity: 1 !important;
     }
 
-
     h1, h2, h3 {
         color: #183B4E !important;
         font-weight: 700 !important;
-        opacity: 1 !important;
     }
 
 
-    /* =====================================================
-       SIDEBAR
-    ===================================================== */
+    /* SIDEBAR */
 
     [data-testid="stSidebar"] {
         background-color: #EAF4F7 !important;
         border-right: 1px solid #CBDDE3 !important;
     }
 
-
     [data-testid="stSidebar"] > div {
         background-color: #EAF4F7 !important;
     }
-
 
     [data-testid="stSidebar"] h1,
     [data-testid="stSidebar"] h2,
@@ -81,9 +71,7 @@ st.markdown(
     }
 
 
-    /* =====================================================
-       CAMPO DE FECHAS
-    ===================================================== */
+    /* CAMPO DE FECHAS */
 
     [data-testid="stSidebar"]
     [data-testid="stDateInput"]
@@ -93,13 +81,11 @@ st.markdown(
         border-radius: 10px !important;
     }
 
-
     [data-testid="stSidebar"]
     [data-testid="stDateInput"]
     div[data-baseweb="input"] > div {
         background-color: #111820 !important;
     }
-
 
     [data-testid="stSidebar"]
     [data-testid="stDateInput"]
@@ -107,240 +93,188 @@ st.markdown(
         background-color: #111820 !important;
     }
 
-
-    /* TEXTO DE FECHAS EN BLANCO */
+    /* TEXTO DE FECHAS BLANCO */
 
     [data-testid="stSidebar"]
     [data-testid="stDateInput"]
     input {
         background-color: #111820 !important;
-
         color: #FFFFFF !important;
-
         -webkit-text-fill-color: #FFFFFF !important;
-
         caret-color: #FFFFFF !important;
-
         opacity: 1 !important;
-
         font-weight: 500 !important;
     }
-
 
     [data-testid="stSidebar"]
     [data-testid="stDateInput"]
     input::placeholder {
         color: #FFFFFF !important;
-
         -webkit-text-fill-color: #FFFFFF !important;
-
         opacity: 1 !important;
     }
-
-
-    /* Botón del calendario */
 
     [data-testid="stSidebar"]
     [data-testid="stDateInput"]
     button {
         background-color: #FFFFFF !important;
-
         border-radius: 8px !important;
-
         border: none !important;
-
         color: #183B4E !important;
     }
-
-
-    /* Icono del calendario */
 
     [data-testid="stSidebar"]
     [data-testid="stDateInput"]
     button svg {
         color: #183B4E !important;
-
         fill: #183B4E !important;
-
-        opacity: 1 !important;
     }
 
 
-    /* =====================================================
-       SELECTBOX
-    ===================================================== */
+    /* SELECTBOX */
 
     [data-testid="stSidebar"]
     div[data-baseweb="select"] > div {
         background-color: #111820 !important;
-
         border: 1px solid #111820 !important;
-
         border-radius: 10px !important;
-
         color: #FFFFFF !important;
     }
-
 
     [data-testid="stSidebar"]
     div[data-baseweb="select"] span {
         color: #FFFFFF !important;
-
         -webkit-text-fill-color: #FFFFFF !important;
-
         opacity: 1 !important;
     }
-
 
     [data-testid="stSidebar"]
     div[data-baseweb="select"] svg {
         color: #FFFFFF !important;
-
         fill: #FFFFFF !important;
-
-        opacity: 1 !important;
     }
 
 
-    /* =====================================================
-       MENÚ DESPLEGABLE
-    ===================================================== */
+    /* MENÚ DESPLEGABLE */
 
-    div[data-baseweb="popover"] {
-        background-color: #FFFFFF !important;
-    }
-
-
-    div[data-baseweb="menu"] {
-        background-color: #FFFFFF !important;
-    }
-
-
+    div[data-baseweb="popover"],
+    div[data-baseweb="menu"],
     div[data-baseweb="menu"] ul {
         background-color: #FFFFFF !important;
     }
 
-
     div[role="option"] {
         background-color: #FFFFFF !important;
-
         color: #172B35 !important;
-
-        opacity: 1 !important;
     }
-
 
     div[role="option"] * {
         color: #172B35 !important;
-
-        opacity: 1 !important;
     }
-
 
     div[role="option"]:hover {
         background-color: #DCECF2 !important;
-
-        color: #102A36 !important;
     }
 
 
-    /* =====================================================
-       CALENDARIO
-    ===================================================== */
+    /* CALENDARIO */
 
     div[data-baseweb="calendar"] {
         background-color: #FFFFFF !important;
-
         color: #172B35 !important;
     }
-
 
     div[data-baseweb="calendar"] * {
         color: #172B35 !important;
-
         opacity: 1 !important;
     }
 
 
-    /* =====================================================
-       MÉTRICAS
-    ===================================================== */
+    /* MÉTRICAS */
 
     [data-testid="stMetric"] {
         background-color: #FFFFFF !important;
-
         border: 1px solid #DCE7EC !important;
-
         border-radius: 16px !important;
-
         padding: 18px !important;
-
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     }
 
-
     [data-testid="stMetricLabel"] p {
         color: #455A64 !important;
-
         font-weight: 600 !important;
-
-        opacity: 1 !important;
     }
-
 
     [data-testid="stMetricValue"] {
         color: #183B4E !important;
-
-        opacity: 1 !important;
     }
 
 
-    /* =====================================================
-       CAJAS
-    ===================================================== */
+    /* CAJAS INFORMATIVAS */
 
     .info-card {
         background-color: #FFFFFF;
-
         border: 1px solid #DCE7EC;
-
         border-radius: 14px;
-
         padding: 16px;
-
         margin-bottom: 12px;
-
         color: #1F2933 !important;
-
         box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
     }
 
 
-    /* =====================================================
-       EXPANDERS
-    ===================================================== */
+    /* TARJETAS DE INSIGHT */
+
+    .insight-card {
+        background-color: #EEF7FA;
+        border-left: 5px solid #4FA8A1;
+        border-radius: 12px;
+        padding: 15px 18px;
+        margin-top: 4px;
+        margin-bottom: 20px;
+        color: #183B4E !important;
+        line-height: 1.55;
+    }
+
+    .insight-card strong {
+        color: #102A36 !important;
+    }
+
+
+    .insight-red {
+        background-color: #FFF1F1;
+        border-left: 5px solid #E57373;
+    }
+
+
+    .insight-blue {
+        background-color: #EEF6FD;
+        border-left: 5px solid #5E9ED6;
+    }
+
+
+    .insight-yellow {
+        background-color: #FFF8E8;
+        border-left: 5px solid #E4A94F;
+    }
+
+
+    .insight-green {
+        background-color: #EFF9F2;
+        border-left: 5px solid #69B984;
+    }
+
+
+    /* EXPANDERS */
 
     [data-testid="stExpander"] {
         background-color: #FFFFFF !important;
-
         border-radius: 12px !important;
-
         border: 1px solid #DCE7EC !important;
     }
 
 
-    /* =====================================================
-       TABLA
-    ===================================================== */
-
-    [data-testid="stDataFrame"] {
-        background-color: #FFFFFF !important;
-    }
-
-
-    /* =====================================================
-       DIVISORES
-    ===================================================== */
+    /* DIVISORES */
 
     hr {
         border-color: #CBDDE3 !important;
@@ -348,13 +282,12 @@ st.markdown(
 
     </style>
     """,
-
     unsafe_allow_html=True
 )
 
 
 # =========================================================
-# ESTILO GENERAL DE LAS GRÁFICAS
+# COLORES DE GRÁFICAS
 # =========================================================
 
 GRAPH_TEXT = "#102A36"
@@ -363,14 +296,16 @@ GRAPH_GRID = "#CFDCE1"
 GRAPH_BACKGROUND = "#FFFFFF"
 
 
+# =========================================================
+# FUNCIÓN DE ESTILO PARA GRÁFICAS
+# =========================================================
+
 def style_chart(fig):
 
     fig.update_layout(
-
         template="plotly_white",
 
         paper_bgcolor=GRAPH_BACKGROUND,
-
         plot_bgcolor=GRAPH_BACKGROUND,
 
         font=dict(
@@ -394,7 +329,6 @@ def style_chart(fig):
 
         hoverlabel=dict(
             bgcolor="#FFFFFF",
-
             bordercolor="#90A4AE",
 
             font=dict(
@@ -404,8 +338,7 @@ def style_chart(fig):
         )
     )
 
-
-    axis_chart_types = {
+    axis_types = {
         "bar",
         "histogram",
         "scatter",
@@ -413,21 +346,16 @@ def style_chart(fig):
         "violin"
     }
 
-
     has_axes = any(
-        trace.type in axis_chart_types
+        trace.type in axis_types
         for trace in fig.data
     )
-
 
     if has_axes:
 
         fig.update_xaxes(
-
             showgrid=True,
-
             gridcolor=GRAPH_GRID,
-
             gridwidth=1,
 
             tickfont=dict(
@@ -441,17 +369,12 @@ def style_chart(fig):
             ),
 
             linecolor="#90A4AE",
-
             tickcolor="#607D8B"
         )
-
 
         fig.update_yaxes(
-
             showgrid=True,
-
             gridcolor=GRAPH_GRID,
-
             gridwidth=1,
 
             tickfont=dict(
@@ -465,12 +388,32 @@ def style_chart(fig):
             ),
 
             linecolor="#90A4AE",
-
             tickcolor="#607D8B"
         )
 
-
     return fig
+
+
+# =========================================================
+# FUNCIÓN PARA MOSTRAR INSIGHTS
+# =========================================================
+
+def insight(
+    emoji,
+    title,
+    text,
+    color_class=""
+):
+
+    st.markdown(
+        f"""
+        <div class="insight-card {color_class}">
+            <strong>{emoji} {title}</strong><br>
+            {text}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 
 # =========================================================
@@ -484,7 +427,7 @@ CSV_PATH = (
 
 
 # =========================================================
-# CARGA DE DATOS
+# CARGA Y PREPARACIÓN DE DATOS
 # =========================================================
 
 @st.cache_data
@@ -492,37 +435,32 @@ def load_data():
 
     df = pd.read_csv(CSV_PATH)
 
-
     df["timestamp"] = pd.to_datetime(
         df["timestamp"],
         utc=True,
         errors="coerce"
     )
 
-
+    # Convertir a hora de Colombia
     df["timestamp_local"] = (
         df["timestamp"]
         .dt.tz_convert("America/Bogota")
     )
-
 
     df["heart_rate_bpm"] = pd.to_numeric(
         df["heart_rate_bpm"],
         errors="coerce"
     )
 
-
     df["spo2_percent"] = pd.to_numeric(
         df["spo2_percent"],
         errors="coerce"
     )
 
-
     df["signal_quality"] = pd.to_numeric(
         df["signal_quality"],
         errors="coerce"
     )
-
 
     df["measurement_status"] = (
         df["measurement_status"]
@@ -531,18 +469,15 @@ def load_data():
         .str.lower()
     )
 
-
     df["date"] = (
         df["timestamp_local"]
         .dt.date
     )
 
-
     df["hour"] = (
         df["timestamp_local"]
         .dt.hour
     )
-
 
     return df
 
@@ -554,7 +489,6 @@ def load_data():
 try:
 
     df = load_data()
-
 
 except FileNotFoundError:
 
@@ -587,12 +521,11 @@ st.markdown(
     Se estudian principalmente la
     <b>frecuencia cardíaca</b>,
     la <b>saturación estimada de oxígeno</b>,
-    la cantidad de usos del dispositivo
-    y la calidad de las mediciones.
+    la cantidad de usos del dispositivo y
+    la calidad de las mediciones.
 
     </div>
     """,
-
     unsafe_allow_html=True
 )
 
@@ -607,16 +540,14 @@ st.sidebar.header(
 
 
 # =========================================================
-# FILTRO FECHAS
+# FECHAS
 # =========================================================
 
 min_date = df["date"].min()
-
 max_date = df["date"].max()
 
 
 date_selection = st.sidebar.date_input(
-
     "🗓️ Rango de fechas",
 
     value=(
@@ -625,7 +556,6 @@ date_selection = st.sidebar.date_input(
     ),
 
     min_value=min_date,
-
     max_value=max_date
 )
 
@@ -638,66 +568,51 @@ if isinstance(
     if len(date_selection) == 2:
 
         start_date = date_selection[0]
-
         end_date = date_selection[1]
-
 
     elif len(date_selection) == 1:
 
         start_date = date_selection[0]
-
         end_date = date_selection[0]
-
 
     else:
 
         start_date = min_date
-
         end_date = max_date
-
 
 else:
 
     start_date = date_selection
-
     end_date = date_selection
 
 
 # =========================================================
-# FILTRO ESTUDIANTE
+# ESTUDIANTE
 # =========================================================
 
 student_options = (
-
     ["Todos"]
 
-    +
-
-    sorted(
-
+    + sorted(
         df["student_id"]
         .dropna()
         .unique()
         .tolist()
-
     )
 )
 
 
 selected_student = st.sidebar.selectbox(
-
     "🎓 Estudiante",
-
     student_options
 )
 
 
 # =========================================================
-# FILTRO ESTADO
+# ESTADO
 # =========================================================
 
 selected_status = st.sidebar.selectbox(
-
     "✅ Estado de la medición",
 
     [
@@ -713,43 +628,33 @@ selected_status = st.sidebar.selectbox(
 # =========================================================
 
 filtered = df[
-
     (df["date"] >= start_date)
-
     &
-
     (df["date"] <= end_date)
-
 ].copy()
 
 
 if selected_student != "Todos":
 
     filtered = filtered[
-
         filtered["student_id"]
         == selected_student
-
     ]
 
 
 if selected_status == "Válidas":
 
     filtered = filtered[
-
         filtered["measurement_status"]
         == "valid"
-
     ]
 
 
 elif selected_status == "Inválidas":
 
     filtered = filtered[
-
         filtered["measurement_status"]
         == "invalid"
-
     ]
 
 
@@ -767,15 +672,9 @@ if filtered.empty:
     st.stop()
 
 
-# =========================================================
-# MEDICIONES VÁLIDAS
-# =========================================================
-
 valid_filtered = filtered[
-
     filtered["measurement_status"]
     == "valid"
-
 ]
 
 
@@ -790,7 +689,6 @@ st.subheader(
 
 total_measurements = len(filtered)
 
-
 unique_students = (
     filtered["student_id"]
     .nunique()
@@ -804,41 +702,32 @@ if not valid_filtered.empty:
         .mean()
     )
 
-
     avg_spo2 = (
         valid_filtered["spo2_percent"]
         .mean()
     )
 
-
 else:
 
     avg_hr = None
-
     avg_spo2 = None
 
 
 invalid_count = (
-
     filtered["measurement_status"]
     .eq("invalid")
     .sum()
-
 )
 
 
 invalid_percentage = (
-
     invalid_count
     / total_measurements
     * 100
-
 )
 
 
-col1, col2, col3, col4, col5 = (
-    st.columns(5)
-)
+col1, col2, col3, col4, col5 = st.columns(5)
 
 
 col1.metric(
@@ -846,37 +735,27 @@ col1.metric(
     f"{total_measurements:,}"
 )
 
-
 col2.metric(
     "🎓 Estudiantes",
     unique_students
 )
 
-
 col3.metric(
-
     "❤️ BPM promedio",
-
     f"{avg_hr:.1f}"
     if avg_hr is not None
     else "N/D"
 )
 
-
 col4.metric(
-
     "🫁 SpO₂ promedio",
-
     f"{avg_spo2:.1f} %"
     if avg_spo2 is not None
     else "N/D"
 )
 
-
 col5.metric(
-
     "⚠️ Inválidas",
-
     f"{invalid_percentage:.1f} %"
 )
 
@@ -892,7 +771,7 @@ st.markdown("---")
 
 # =========================================================
 # GRÁFICA 1
-# MEDICIONES POR DÍA
+# USO POR DÍA
 # =========================================================
 
 st.subheader(
@@ -901,13 +780,9 @@ st.subheader(
 
 
 measurements_day = (
-
     filtered
-
     .groupby("date")
-
     .size()
-
     .reset_index(
         name="Mediciones"
     )
@@ -915,19 +790,15 @@ measurements_day = (
 
 
 fig_day = px.bar(
-
     measurements_day,
 
     x="date",
-
     y="Mediciones",
 
     title="Cantidad de mediciones por día",
 
     labels={
-
         "date": "Fecha",
-
         "Mediciones":
         "Número de mediciones"
     },
@@ -940,17 +811,53 @@ fig_day = px.bar(
 
 style_chart(fig_day)
 
-
 fig_day.update_layout(
     showlegend=False
 )
 
 
 st.plotly_chart(
-
     fig_day,
-
     use_container_width=True
+)
+
+
+# Insight de uso diario
+
+peak_day_row = measurements_day.loc[
+    measurements_day["Mediciones"].idxmax()
+]
+
+peak_day = peak_day_row["date"]
+
+peak_day_measurements = int(
+    peak_day_row["Mediciones"]
+)
+
+daily_average = (
+    measurements_day["Mediciones"]
+    .mean()
+)
+
+peak_day_percentage = (
+    peak_day_measurements
+    / total_measurements
+    * 100
+)
+
+
+insight(
+    "📌",
+    "Resultado principal",
+    (
+        f"El día con mayor uso fue "
+        f"<strong>{peak_day.strftime('%d/%m/%Y')}</strong>, "
+        f"con <strong>{peak_day_measurements} mediciones</strong>. "
+        f"Esto representa el <strong>{peak_day_percentage:.1f}%</strong> "
+        f"de todas las mediciones visibles. "
+        f"El promedio diario fue de "
+        f"<strong>{daily_average:.1f} mediciones</strong>."
+    )
 )
 
 
@@ -963,9 +870,7 @@ st.subheader(
 )
 
 
-graph1, graph2 = (
-    st.columns(2)
-)
+graph1, graph2 = st.columns(2)
 
 
 # =========================================================
@@ -976,8 +881,13 @@ with graph1:
 
     if not valid_filtered.empty:
 
-        fig_hr = px.histogram(
+        hr_data = (
+            valid_filtered["heart_rate_bpm"]
+            .dropna()
+        )
 
+
+        fig_hr = px.histogram(
             valid_filtered,
 
             x="heart_rate_bpm",
@@ -990,10 +900,8 @@ with graph1:
             ),
 
             labels={
-
                 "heart_rate_bpm":
                 "Frecuencia cardíaca (BPM)"
-
             },
 
             color_discrete_sequence=[
@@ -1003,10 +911,7 @@ with graph1:
 
 
         fig_hr.update_layout(
-
-            yaxis_title=
-            "Cantidad de mediciones",
-
+            yaxis_title="Cantidad de mediciones",
             showlegend=False
         )
 
@@ -1015,17 +920,35 @@ with graph1:
 
 
         st.plotly_chart(
-
             fig_hr,
-
             use_container_width=True
         )
 
 
-        st.caption(
-            "Cada barra muestra cuántas "
-            "mediciones están dentro de "
-            "un rango de BPM."
+        # Estadísticas BPM
+
+        hr_mean = hr_data.mean()
+
+        hr_median = hr_data.median()
+
+        hr_q1 = hr_data.quantile(0.25)
+
+        hr_q3 = hr_data.quantile(0.75)
+
+
+        insight(
+            "❤️",
+            "¿Qué nos muestra?",
+            (
+                f"Las mediciones válidas tienen un promedio de "
+                f"<strong>{hr_mean:.1f} BPM</strong> "
+                f"y una mediana de "
+                f"<strong>{hr_median:.1f} BPM</strong>. "
+                f"El 50% central de los registros se encuentra "
+                f"aproximadamente entre "
+                f"<strong>{hr_q1:.1f} y {hr_q3:.1f} BPM</strong>."
+            ),
+            "insight-red"
         )
 
 
@@ -1045,8 +968,13 @@ with graph2:
 
     if not valid_filtered.empty:
 
-        fig_spo2 = px.histogram(
+        spo2_data = (
+            valid_filtered["spo2_percent"]
+            .dropna()
+        )
 
+
+        fig_spo2 = px.histogram(
             valid_filtered,
 
             x="spo2_percent",
@@ -1059,10 +987,8 @@ with graph2:
             ),
 
             labels={
-
                 "spo2_percent":
                 "SpO₂ estimada (%)"
-
             },
 
             color_discrete_sequence=[
@@ -1072,10 +998,7 @@ with graph2:
 
 
         fig_spo2.update_layout(
-
-            yaxis_title=
-            "Cantidad de mediciones",
-
+            yaxis_title="Cantidad de mediciones",
             showlegend=False
         )
 
@@ -1084,17 +1007,34 @@ with graph2:
 
 
         st.plotly_chart(
-
             fig_spo2,
-
             use_container_width=True
         )
 
 
-        st.caption(
-            "La gráfica muestra en qué "
-            "valores se concentran las "
-            "mediciones de SpO₂."
+        # Estadísticas SpO2
+
+        spo2_mean = spo2_data.mean()
+
+        spo2_median = spo2_data.median()
+
+        spo2_q1 = spo2_data.quantile(0.25)
+
+        spo2_q3 = spo2_data.quantile(0.75)
+
+
+        insight(
+            "🫁",
+            "¿Qué nos muestra?",
+            (
+                f"La SpO₂ estimada promedio de las mediciones válidas "
+                f"es de <strong>{spo2_mean:.1f}%</strong>, "
+                f"con una mediana de "
+                f"<strong>{spo2_median:.1f}%</strong>. "
+                f"El 50% central de los valores está entre "
+                f"<strong>{spo2_q1:.1f}% y {spo2_q3:.1f}%</strong>."
+            ),
+            "insight-blue"
         )
 
 
@@ -1106,7 +1046,7 @@ with graph2:
 
 
 # =========================================================
-# HORARIOS Y CALIDAD
+# HORARIOS Y ESTADO
 # =========================================================
 
 st.subheader(
@@ -1118,19 +1058,15 @@ graph3, graph4 = st.columns(2)
 
 
 # =========================================================
-# USO POR HORA
+# HORAS DE USO
 # =========================================================
 
 with graph3:
 
     hourly = (
-
         filtered
-
         .groupby("hour")
-
         .size()
-
         .reset_index(
             name="Mediciones"
         )
@@ -1138,23 +1074,19 @@ with graph3:
 
 
     fig_hour = px.bar(
-
         hourly,
 
         x="hour",
-
         y="Mediciones",
 
         title="Mediciones según la hora del día",
 
         labels={
-
             "hour":
             "Hora del día",
 
             "Mediciones":
             "Número de mediciones"
-
         },
 
         color_discrete_sequence=[
@@ -1165,11 +1097,9 @@ with graph3:
 
     style_chart(fig_hour)
 
-
     fig_hour.update_layout(
         showlegend=False
     )
-
 
     fig_hour.update_xaxes(
         dtick=1
@@ -1177,34 +1107,55 @@ with graph3:
 
 
     st.plotly_chart(
-
         fig_hour,
-
         use_container_width=True
     )
 
 
-    st.caption(
-        "Las barras más altas muestran "
-        "las horas en las que el tótem "
-        "fue utilizado más veces."
+    peak_hour_row = hourly.loc[
+        hourly["Mediciones"].idxmax()
+    ]
+
+    peak_hour = int(
+        peak_hour_row["hour"]
+    )
+
+    peak_hour_count = int(
+        peak_hour_row["Mediciones"]
+    )
+
+    peak_hour_percentage = (
+        peak_hour_count
+        / total_measurements
+        * 100
+    )
+
+
+    insight(
+        "🕒",
+        "Hora de mayor actividad",
+        (
+            f"El horario con más registros fue entre "
+            f"<strong>{peak_hour:02d}:00 y "
+            f"{peak_hour:02d}:59</strong>, "
+            f"con <strong>{peak_hour_count} mediciones</strong>. "
+            f"Representa aproximadamente el "
+            f"<strong>{peak_hour_percentage:.1f}%</strong> "
+            f"de la actividad mostrada."
+        ),
+        "insight-yellow"
     )
 
 
 # =========================================================
-# VÁLIDAS / INVÁLIDAS
+# CALIDAD DE LAS MEDICIONES
 # =========================================================
 
 with graph4:
 
     status_counts = (
-
-        filtered[
-            "measurement_status"
-        ]
-
+        filtered["measurement_status"]
         .value_counts()
-
         .reset_index()
     )
 
@@ -1216,25 +1167,18 @@ with graph4:
 
 
     status_counts["Estado"] = (
-
         status_counts["Estado"]
-
         .replace({
-
             "valid": "Válida",
-
             "invalid": "Inválida"
-
         })
     )
 
 
     fig_status = px.pie(
-
         status_counts,
 
         names="Estado",
-
         values="Cantidad",
 
         hole=0.55,
@@ -1244,13 +1188,8 @@ with graph4:
         color="Estado",
 
         color_discrete_map={
-
-            "Válida":
-            "#69B984",
-
-            "Inválida":
-            "#E57373"
-
+            "Válida": "#69B984",
+            "Inválida": "#E57373"
         }
     )
 
@@ -1259,40 +1198,53 @@ with graph4:
 
 
     fig_status.update_traces(
-
         textposition="auto",
 
         textfont=dict(
-
             color="#102A36",
-
             size=16
         ),
 
         marker=dict(
-
             line=dict(
-
                 color="#FFFFFF",
-
                 width=2
-
             )
         )
     )
 
 
     st.plotly_chart(
-
         fig_status,
-
         use_container_width=True
     )
 
 
-    st.caption(
-        "Verde = medición válida. "
-        "Rojo = medición inválida."
+    valid_count = (
+        filtered["measurement_status"]
+        .eq("valid")
+        .sum()
+    )
+
+
+    valid_percentage = (
+        valid_count
+        / total_measurements
+        * 100
+    )
+
+
+    insight(
+        "✅",
+        "Calidad de los registros",
+        (
+            f"De las <strong>{total_measurements} mediciones</strong>, "
+            f"<strong>{valid_count}</strong> fueron válidas "
+            f"(<strong>{valid_percentage:.1f}%</strong>) "
+            f"y <strong>{invalid_count}</strong> fueron inválidas "
+            f"(<strong>{invalid_percentage:.1f}%</strong>)."
+        ),
+        "insight-green"
     )
 
 
@@ -1309,25 +1261,18 @@ signal_data = filtered.copy()
 
 
 signal_data["Estado"] = (
-
     signal_data["measurement_status"]
-
     .replace({
-
         "valid": "Válida",
-
         "invalid": "Inválida"
-
     })
 )
 
 
 fig_signal = px.box(
-
     signal_data,
 
     x="Estado",
-
     y="signal_quality",
 
     color="Estado",
@@ -1338,29 +1283,20 @@ fig_signal = px.box(
     ),
 
     labels={
-
-        "Estado":
-        "Estado",
+        "Estado": "Estado",
 
         "signal_quality":
         "Calidad de señal"
-
     },
 
     color_discrete_map={
-
-        "Válida":
-        "#69B984",
-
-        "Inválida":
-        "#E57373"
-
+        "Válida": "#69B984",
+        "Inválida": "#E57373"
     }
 )
 
 
 style_chart(fig_signal)
-
 
 fig_signal.update_layout(
     showlegend=False
@@ -1368,18 +1304,112 @@ fig_signal.update_layout(
 
 
 st.plotly_chart(
-
     fig_signal,
-
     use_container_width=True
 )
 
 
-st.caption(
-    "La calidad de señal se expresa entre 0 y 1. "
-    "Los valores cercanos a 1 representan "
-    "una mejor calidad de señal."
+# Insight calidad señal
+
+signal_valid = (
+    filtered.loc[
+        filtered["measurement_status"] == "valid",
+        "signal_quality"
+    ]
+    .dropna()
 )
+
+
+signal_invalid = (
+    filtered.loc[
+        filtered["measurement_status"] == "invalid",
+        "signal_quality"
+    ]
+    .dropna()
+)
+
+
+if (
+    not signal_valid.empty
+    and
+    not signal_invalid.empty
+):
+
+    median_valid = (
+        signal_valid.median()
+    )
+
+    median_invalid = (
+        signal_invalid.median()
+    )
+
+
+    difference = (
+        median_valid
+        - median_invalid
+    )
+
+
+    if difference > 0:
+
+        comparison_text = (
+            f"La mediana de señal de los registros válidos "
+            f"es <strong>{median_valid:.3f}</strong>, "
+            f"mientras que la de los inválidos es "
+            f"<strong>{median_invalid:.3f}</strong>. "
+            f"En estos datos, las mediciones válidas presentan "
+            f"una mediana de señal "
+            f"<strong>{difference:.3f} puntos mayor</strong>."
+        )
+
+    elif difference < 0:
+
+        comparison_text = (
+            f"La mediana de señal de los registros válidos "
+            f"es <strong>{median_valid:.3f}</strong>, "
+            f"mientras que la de los inválidos es "
+            f"<strong>{median_invalid:.3f}</strong>. "
+            f"En este filtro, la diferencia observada es de "
+            f"<strong>{abs(difference):.3f} puntos</strong> "
+            f"a favor de los registros inválidos."
+        )
+
+    else:
+
+        comparison_text = (
+            f"Las mediciones válidas e inválidas tienen "
+            f"la misma mediana de calidad de señal: "
+            f"<strong>{median_valid:.3f}</strong>."
+        )
+
+
+    insight(
+        "📡",
+        "Relación con la calidad de señal",
+        comparison_text
+    )
+
+
+else:
+
+    signal_all = (
+        filtered["signal_quality"]
+        .dropna()
+    )
+
+
+    if not signal_all.empty:
+
+        insight(
+            "📡",
+            "Calidad de señal",
+            (
+                f"La mediana de calidad de señal de los registros "
+                f"mostrados es <strong>{signal_all.median():.3f}</strong>. "
+                f"La escala va de 0 a 1, donde un valor más alto "
+                f"representa una mejor calidad de señal."
+            )
+        )
 
 
 st.markdown("---")
@@ -1401,50 +1431,32 @@ st.write(
 
 
 individual_base = df[
-
     (df["date"] >= start_date)
-
     &
-
     (df["date"] <= end_date)
-
 ].copy()
 
 
 if selected_status == "Válidas":
 
     individual_base = individual_base[
-
-        individual_base[
-            "measurement_status"
-        ]
+        individual_base["measurement_status"]
         == "valid"
-
     ]
 
 
 elif selected_status == "Inválidas":
 
     individual_base = individual_base[
-
-        individual_base[
-            "measurement_status"
-        ]
+        individual_base["measurement_status"]
         == "invalid"
-
     ]
 
 
 available_students = sorted(
-
-    individual_base[
-        "student_id"
-    ]
-
+    individual_base["student_id"]
     .dropna()
-
     .unique()
-
     .tolist()
 )
 
@@ -1455,28 +1467,18 @@ if available_students:
 
 
     if (
-
         selected_student != "Todos"
-
         and
-
-        selected_student
-        in available_students
-
+        selected_student in available_students
     ):
 
         default_index = (
-
             available_students
-            .index(
-                selected_student
-            )
-
+            .index(selected_student)
         )
 
 
     individual_student = st.selectbox(
-
         "👤 Estudiante para seguimiento",
 
         available_students,
@@ -1488,42 +1490,24 @@ if available_students:
 
 
     student_data = (
-
         individual_base[
-
-            individual_base[
-                "student_id"
-            ]
+            individual_base["student_id"]
             == individual_student
-
         ]
-
         .sort_values(
             "timestamp_local"
         )
     )
 
 
-    # =====================================================
-    # DATOS DEL ESTUDIANTE
-    # =====================================================
-
     first_measurement = (
-
-        student_data[
-            "timestamp_local"
-        ]
-
+        student_data["timestamp_local"]
         .min()
     )
 
 
     last_measurement = (
-
-        student_data[
-            "timestamp_local"
-        ]
-
+        student_data["timestamp_local"]
         .max()
     )
 
@@ -1532,23 +1516,18 @@ if available_students:
 
 
     c1.metric(
-
         "🎓 Estudiante",
-
         individual_student
     )
 
 
     c2.metric(
-
         "📊 Mediciones",
-
         len(student_data)
     )
 
 
     c3.metric(
-
         "⏮️ Primera medición",
 
         first_measurement.strftime(
@@ -1558,7 +1537,6 @@ if available_students:
 
 
     c4.metric(
-
         "⏭️ Última medición",
 
         last_measurement.strftime(
@@ -1567,27 +1545,19 @@ if available_students:
     )
 
 
-    # =====================================================
-    # GRÁFICAS INDIVIDUALES
-    # =====================================================
-
-    individual1, individual2 = (
-        st.columns(2)
-    )
+    individual1, individual2 = st.columns(2)
 
 
     # =====================================================
-    # BPM
+    # BPM INDIVIDUAL
     # =====================================================
 
     with individual1:
 
         fig_ind_hr = px.line(
-
             student_data,
 
             x="timestamp_local",
-
             y="heart_rate_bpm",
 
             markers=True,
@@ -1600,7 +1570,6 @@ if available_students:
             ),
 
             labels={
-
                 "timestamp_local":
                 "Fecha y hora",
 
@@ -1609,28 +1578,19 @@ if available_students:
 
                 "measurement_status":
                 "Estado"
-
             },
 
             color_discrete_map={
-
-                "valid":
-                "#D85C5C",
-
-                "invalid":
-                "#667780"
-
+                "valid": "#D85C5C",
+                "invalid": "#667780"
             }
         )
 
 
-        style_chart(
-            fig_ind_hr
-        )
+        style_chart(fig_ind_hr)
 
 
         fig_ind_hr.update_traces(
-
             line=dict(
                 width=3
             ),
@@ -1642,25 +1602,49 @@ if available_students:
 
 
         st.plotly_chart(
-
             fig_ind_hr,
-
             use_container_width=True
         )
 
 
+        student_valid_hr = (
+            student_data.loc[
+                student_data["measurement_status"] == "valid",
+                "heart_rate_bpm"
+            ]
+            .dropna()
+        )
+
+
+        if not student_valid_hr.empty:
+
+            insight(
+                "❤️",
+                "Resumen del estudiante",
+                (
+                    f"En sus mediciones válidas, "
+                    f"<strong>{individual_student}</strong> registra "
+                    f"un promedio de "
+                    f"<strong>{student_valid_hr.mean():.1f} BPM</strong>. "
+                    f"El valor mínimo observado es "
+                    f"<strong>{student_valid_hr.min():.1f}</strong> "
+                    f"y el máximo es "
+                    f"<strong>{student_valid_hr.max():.1f} BPM</strong>."
+                ),
+                "insight-red"
+            )
+
+
     # =====================================================
-    # SPO2
+    # SPO2 INDIVIDUAL
     # =====================================================
 
     with individual2:
 
         fig_ind_spo2 = px.line(
-
             student_data,
 
             x="timestamp_local",
-
             y="spo2_percent",
 
             markers=True,
@@ -1670,7 +1654,6 @@ if available_students:
             title="🫁 Evolución de SpO₂",
 
             labels={
-
                 "timestamp_local":
                 "Fecha y hora",
 
@@ -1679,28 +1662,19 @@ if available_students:
 
                 "measurement_status":
                 "Estado"
-
             },
 
             color_discrete_map={
-
-                "valid":
-                "#448FC4",
-
-                "invalid":
-                "#667780"
-
+                "valid": "#448FC4",
+                "invalid": "#667780"
             }
         )
 
 
-        style_chart(
-            fig_ind_spo2
-        )
+        style_chart(fig_ind_spo2)
 
 
         fig_ind_spo2.update_traces(
-
             line=dict(
                 width=3
             ),
@@ -1712,11 +1686,37 @@ if available_students:
 
 
         st.plotly_chart(
-
             fig_ind_spo2,
-
             use_container_width=True
         )
+
+
+        student_valid_spo2 = (
+            student_data.loc[
+                student_data["measurement_status"] == "valid",
+                "spo2_percent"
+            ]
+            .dropna()
+        )
+
+
+        if not student_valid_spo2.empty:
+
+            insight(
+                "🫁",
+                "Resumen del estudiante",
+                (
+                    f"En las mediciones válidas de "
+                    f"<strong>{individual_student}</strong>, "
+                    f"la SpO₂ estimada promedio es "
+                    f"<strong>{student_valid_spo2.mean():.1f}%</strong>. "
+                    f"Los valores observados van desde "
+                    f"<strong>{student_valid_spo2.min():.1f}%</strong> "
+                    f"hasta "
+                    f"<strong>{student_valid_spo2.max():.1f}%</strong>."
+                ),
+                "insight-blue"
+            )
 
 
 else:
@@ -1731,24 +1731,17 @@ st.markdown("---")
 
 
 # =========================================================
-# ANÁLISIS AUTOMÁTICO
+# ANÁLISIS GENERAL
 # =========================================================
 
 st.subheader(
-    "🔍 Análisis e interpretación"
+    "🔍 Principales hallazgos"
 )
 
 
-# =========================================================
-# DÍA DE MAYOR USO
-# =========================================================
-
 daily_counts = (
-
     filtered
-
     .groupby("date")
-
     .size()
 )
 
@@ -1763,16 +1756,9 @@ top_day_count = int(
 )
 
 
-# =========================================================
-# HORA DE MAYOR USO
-# =========================================================
-
 hour_counts = (
-
     filtered
-
     .groupby("hour")
-
     .size()
 )
 
@@ -1787,16 +1773,8 @@ top_hour_count = int(
 )
 
 
-# =========================================================
-# ESTUDIANTE CON MÁS REGISTROS
-# =========================================================
-
 student_counts = (
-
-    filtered[
-        "student_id"
-    ]
-
+    filtered["student_id"]
     .value_counts()
 )
 
@@ -1812,39 +1790,77 @@ top_student_count = int(
 
 
 # =========================================================
-# HALLAZGOS
+# HALLAZGOS EN TARJETAS
+# =========================================================
+
+h1, h2, h3 = st.columns(3)
+
+
+with h1:
+
+    insight(
+        "📅",
+        "Día más activo",
+        (
+            f"<strong>{top_day.strftime('%d/%m/%Y')}</strong><br>"
+            f"{top_day_count} mediciones registradas."
+        )
+    )
+
+
+with h2:
+
+    insight(
+        "🕒",
+        "Hora más activa",
+        (
+            f"<strong>{top_hour:02d}:00 – "
+            f"{top_hour:02d}:59</strong><br>"
+            f"{top_hour_count} mediciones registradas."
+        ),
+        "insight-yellow"
+    )
+
+
+with h3:
+
+    insight(
+        "🎓",
+        "Estudiante con más usos",
+        (
+            f"<strong>{top_student}</strong><br>"
+            f"{top_student_count} mediciones registradas."
+        ),
+        "insight-green"
+    )
+
+
+# =========================================================
+# INTERPRETACIÓN GENERAL
 # =========================================================
 
 st.markdown(
     f"""
-### 1. 📅 Día de mayor utilización
+### 🧠 Lectura general de los resultados
 
-El día con mayor cantidad de mediciones dentro de los filtros
-seleccionados fue **{top_day.strftime("%d/%m/%Y")}**,
-con **{top_day_count} mediciones**.
+- 📊 El período seleccionado contiene **{total_measurements} mediciones**
+  realizadas por **{unique_students} estudiantes diferentes**.
 
----
+- 📅 La mayor actividad se registró el
+  **{top_day.strftime("%d/%m/%Y")}**, con
+  **{top_day_count} mediciones**.
 
-### 2. 🕒 Horario de mayor utilización
+- 🕒 La hora de mayor utilización fue entre
+  **{top_hour:02d}:00 y {top_hour:02d}:59**.
 
-La hora con mayor actividad fue entre
-**{top_hour:02d}:00 y {top_hour:02d}:59**,
-con **{top_hour_count} mediciones**.
+- 🎓 **{top_student}** fue el estudiante con mayor cantidad de usos,
+  con **{top_student_count} registros**.
 
----
+- ✅ **{valid_percentage:.1f}%** de los registros mostrados son
+  mediciones válidas.
 
-### 3. 🎓 Estudiante con más registros
-
-El estudiante con mayor número de mediciones fue
-**{top_student}**, con **{top_student_count} registros**.
-
----
-
-### 4. ⚠️ Calidad de los registros
-
-Dentro del período analizado,
-**{invalid_percentage:.1f}% de las mediciones fueron inválidas**
-({invalid_count} de {total_measurements} registros).
+- ⚠️ **{invalid_percentage:.1f}%** de los registros corresponden
+  a mediciones inválidas.
 """
 )
 
@@ -1860,20 +1876,20 @@ st.warning(
     Las mediciones de frecuencia cardíaca y SpO₂ mostradas
     en este dashboard pertenecen a un escenario educativo.
 
-    Estas variables no permiten, por sí solas, determinar
+    Los valores permiten analizar patrones y cambios en las
+    mediciones registradas, pero no permiten determinar por sí solos
     el estado general de salud de una persona.
 
-    El sensor MAX30102 no debe interpretarse como un
+    El sensor MAX30102 del ejercicio no debe considerarse un
     dispositivo médico validado.
 
-    Este dashboard no realiza diagnósticos médicos
-    ni clasificaciones clínicas.
+    Este dashboard no realiza diagnósticos ni clasificaciones clínicas.
     """
 )
 
 
 # =========================================================
-# TABLA DE DATOS
+# TABLA
 # =========================================================
 
 with st.expander(
@@ -1895,47 +1911,28 @@ with st.expander(
 
 
     table["measurement_status"] = (
-
         table["measurement_status"]
-
         .replace({
-
-            "valid":
-            "Válida",
-
-            "invalid":
-            "Inválida"
-
+            "valid": "Válida",
+            "invalid": "Inválida"
         })
     )
 
 
     table.columns = [
-
         "Fecha y hora",
-
         "Estudiante",
-
         "NFC",
-
         "Dispositivo",
-
         "BPM",
-
         "SpO₂ (%)",
-
         "Calidad de señal",
-
         "Estado"
-
     ]
 
 
     st.dataframe(
-
         table,
-
         use_container_width=True,
-
         hide_index=True
     )
