@@ -16,389 +16,344 @@ st.set_page_config(
 
 
 # =========================================================
-# ESTILOS
+# ESTILOS VISUALES
 # =========================================================
 
-st.markdown("""
-<style>
+st.markdown(
+    """
+    <style>
 
-/* =========================================================
-   FONDO GENERAL
-========================================================= */
+    /* =====================================================
+       FONDO GENERAL
+    ===================================================== */
 
-html,
-body,
-[data-testid="stAppViewContainer"],
-.stApp {
-    background-color: #F7FAFC !important;
-}
+    html,
+    body,
+    .stApp,
+    [data-testid="stAppViewContainer"],
+    [data-testid="stMain"] {
+        background-color: #F7FAFC !important;
+    }
 
 
-/* =========================================================
-   TEXTO GENERAL
-========================================================= */
+    /* =====================================================
+       TEXTO GENERAL
+    ===================================================== */
 
-.stApp,
-.stApp p,
-.stApp span,
-.stApp label {
-    color: #1F2933;
-}
+    .stApp,
+    .stApp p,
+    .stApp span,
+    .stApp label {
+        color: #1F2933;
+        opacity: 1 !important;
+    }
 
 
-/* =========================================================
-   TÍTULOS
-========================================================= */
+    h1, h2, h3 {
+        color: #183B4E !important;
+        font-weight: 700 !important;
+        opacity: 1 !important;
+    }
+
+
+    /* =====================================================
+       SIDEBAR
+    ===================================================== */
 
-h1, h2, h3 {
-    color: #183B4E !important;
-    font-weight: 700 !important;
-}
+    [data-testid="stSidebar"] {
+        background-color: #EAF4F7 !important;
+        border-right: 1px solid #CBDDE3 !important;
+    }
+
+    [data-testid="stSidebar"] > div {
+        background-color: #EAF4F7 !important;
+    }
+
+
+    [data-testid="stSidebar"] h1,
+    [data-testid="stSidebar"] h2,
+    [data-testid="stSidebar"] h3,
+    [data-testid="stSidebar"] p,
+    [data-testid="stSidebar"] label {
+        color: #1F3440 !important;
+        opacity: 1 !important;
+    }
+
+
+    /* =====================================================
+       TODOS LOS INPUTS
+    ===================================================== */
+
+    [data-testid="stSidebar"] div[data-baseweb="input"] {
+        background-color: #FFFFFF !important;
+        border: 1px solid #AFC5CE !important;
+        border-radius: 10px !important;
+        color: #172B35 !important;
+    }
+
+
+    [data-testid="stSidebar"] div[data-baseweb="input"] > div {
+        background-color: #FFFFFF !important;
+        color: #172B35 !important;
+    }
+
+
+    [data-testid="stSidebar"] div[data-baseweb="base-input"] {
+        background-color: #FFFFFF !important;
+        color: #172B35 !important;
+    }
+
+
+    [data-testid="stSidebar"] input {
+        background-color: #FFFFFF !important;
+        color: #172B35 !important;
+        -webkit-text-fill-color: #172B35 !important;
+        caret-color: #172B35 !important;
+        opacity: 1 !important;
+        font-weight: 500 !important;
+    }
+
+
+    [data-testid="stSidebar"] input::placeholder {
+        color: #526772 !important;
+        -webkit-text-fill-color: #526772 !important;
+        opacity: 1 !important;
+    }
 
 
-/* =========================================================
-   SIDEBAR
-========================================================= */
+    /* =====================================================
+       INPUT DE FECHAS
+    ===================================================== */
 
-[data-testid="stSidebar"] {
-    background-color: #EAF4F7 !important;
-    border-right: 1px solid #CBDDE3;
-}
+    [data-testid="stSidebar"] [data-testid="stDateInput"] {
+        background-color: transparent !important;
+    }
 
 
-[data-testid="stSidebar"] > div {
-    background-color: #EAF4F7 !important;
-}
+    [data-testid="stSidebar"]
+    [data-testid="stDateInput"]
+    div[data-baseweb="input"] {
+        background-color: #FFFFFF !important;
+        border: 1px solid #AFC5CE !important;
+        border-radius: 10px !important;
+        color: #172B35 !important;
+    }
 
 
-/* Texto del sidebar */
+    [data-testid="stSidebar"]
+    [data-testid="stDateInput"]
+    div[data-baseweb="input"] > div {
+        background-color: #FFFFFF !important;
+        color: #172B35 !important;
+    }
 
-[data-testid="stSidebar"] h1,
-[data-testid="stSidebar"] h2,
-[data-testid="stSidebar"] h3,
-[data-testid="stSidebar"] p,
-[data-testid="stSidebar"] label {
-    color: #1F3440 !important;
-}
 
+    [data-testid="stSidebar"]
+    [data-testid="stDateInput"]
+    input {
+        background-color: #FFFFFF !important;
+        color: #172B35 !important;
+        -webkit-text-fill-color: #172B35 !important;
+        opacity: 1 !important;
+    }
 
-/* =========================================================
-   DATE INPUT
-   TODO EL CAMPO BLANCO
-========================================================= */
 
-[data-testid="stSidebar"] [data-testid="stDateInput"] {
-    background-color: transparent !important;
-}
+    [data-testid="stSidebar"]
+    [data-testid="stDateInput"]
+    button {
+        background-color: #FFFFFF !important;
+        color: #315767 !important;
+        border: none !important;
+    }
 
 
-/* Contenedor externo */
+    [data-testid="stSidebar"]
+    [data-testid="stDateInput"]
+    button svg {
+        color: #315767 !important;
+        fill: #315767 !important;
+        opacity: 1 !important;
+    }
 
-[data-testid="stSidebar"] [data-testid="stDateInput"] > div {
-    background-color: #FFFFFF !important;
-    color: #1F2933 !important;
-}
 
+    /* =====================================================
+       SELECTBOX
+    ===================================================== */
 
-/* Contenedor BaseWeb */
+    [data-testid="stSidebar"]
+    div[data-baseweb="select"] > div {
+        background-color: #FFFFFF !important;
+        border: 1px solid #AFC5CE !important;
+        border-radius: 10px !important;
+        color: #172B35 !important;
+    }
 
-[data-testid="stSidebar"] [data-baseweb="input"] {
-    background-color: #FFFFFF !important;
-    border-radius: 10px !important;
-}
 
+    [data-testid="stSidebar"]
+    div[data-baseweb="select"] span {
+        color: #172B35 !important;
+        -webkit-text-fill-color: #172B35 !important;
+        opacity: 1 !important;
+    }
 
-/* Parte izquierda y derecha del campo */
 
-[data-testid="stSidebar"] [data-baseweb="base-input"] {
-    background-color: #FFFFFF !important;
-    color: #1F2933 !important;
-    border-radius: 10px !important;
-}
+    [data-testid="stSidebar"]
+    div[data-baseweb="select"] svg {
+        color: #315767 !important;
+        fill: #315767 !important;
+        opacity: 1 !important;
+    }
 
 
-/* Todas las divisiones internas */
+    /* =====================================================
+       MENÚS DESPLEGABLES
+    ===================================================== */
 
-[data-testid="stSidebar"] [data-testid="stDateInput"]
-div[data-baseweb="input"] > div {
+    div[data-baseweb="popover"] {
+        background-color: #FFFFFF !important;
+    }
 
-    background-color: #FFFFFF !important;
-}
 
+    div[data-baseweb="menu"] {
+        background-color: #FFFFFF !important;
+    }
 
-/* Campo de texto */
 
-[data-testid="stSidebar"] [data-testid="stDateInput"] input {
+    div[data-baseweb="menu"] ul {
+        background-color: #FFFFFF !important;
+    }
 
-    background-color: #FFFFFF !important;
 
-    color: #1F2933 !important;
+    div[role="option"] {
+        background-color: #FFFFFF !important;
+        color: #172B35 !important;
+        opacity: 1 !important;
+    }
 
-    -webkit-text-fill-color: #1F2933 !important;
 
-    opacity: 1 !important;
+    div[role="option"] * {
+        color: #172B35 !important;
+        opacity: 1 !important;
+    }
 
-    font-weight: 500 !important;
-}
 
+    div[role="option"]:hover {
+        background-color: #DCECF2 !important;
+        color: #102A36 !important;
+    }
 
-/* Placeholder */
 
-[data-testid="stSidebar"]
-[data-testid="stDateInput"]
-input::placeholder {
+    /* =====================================================
+       CALENDARIO
+    ===================================================== */
 
-    color: #536771 !important;
+    div[data-baseweb="calendar"] {
+        background-color: #FFFFFF !important;
+        color: #172B35 !important;
+    }
 
-    -webkit-text-fill-color: #536771 !important;
 
-    opacity: 1 !important;
-}
+    div[data-baseweb="calendar"] * {
+        color: #172B35 !important;
+        opacity: 1 !important;
+    }
 
 
-/* Botón / icono del calendario */
+    /* =====================================================
+       MÉTRICAS
+    ===================================================== */
 
-[data-testid="stSidebar"]
-[data-testid="stDateInput"] button {
+    [data-testid="stMetric"] {
+        background-color: #FFFFFF !important;
+        border: 1px solid #DCE7EC !important;
+        border-radius: 16px !important;
+        padding: 18px !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
 
-    background-color: #FFFFFF !important;
 
-    color: #34515E !important;
-}
+    [data-testid="stMetricLabel"] p {
+        color: #455A64 !important;
+        font-weight: 600 !important;
+        opacity: 1 !important;
+    }
 
 
-[data-testid="stSidebar"]
-[data-testid="stDateInput"] svg {
+    [data-testid="stMetricValue"] {
+        color: #183B4E !important;
+        opacity: 1 !important;
+    }
 
-    color: #34515E !important;
 
-    fill: #34515E !important;
+    /* =====================================================
+       CAJAS
+    ===================================================== */
 
-    opacity: 1 !important;
-}
+    .info-card {
+        background-color: #FFFFFF;
+        border: 1px solid #DCE7EC;
+        border-radius: 14px;
+        padding: 16px;
+        margin-bottom: 12px;
+        color: #1F2933 !important;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+    }
 
 
-/* =========================================================
-   SELECTBOX
-========================================================= */
+    /* =====================================================
+       EXPANDERS
+    ===================================================== */
 
-[data-testid="stSidebar"] [data-baseweb="select"] > div {
+    [data-testid="stExpander"] {
+        background-color: #FFFFFF !important;
+        border-radius: 12px !important;
+        border: 1px solid #DCE7EC !important;
+    }
 
-    background-color: #FFFFFF !important;
 
-    border: 1px solid #B7CBD3 !important;
+    /* =====================================================
+       TABLA
+    ===================================================== */
 
-    border-radius: 10px !important;
+    [data-testid="stDataFrame"] {
+        background-color: #FFFFFF !important;
+    }
 
-    color: #1F2933 !important;
-}
 
+    /* =====================================================
+       LÍNEAS
+    ===================================================== */
 
-/* Texto seleccionado */
+    hr {
+        border-color: #CBDDE3 !important;
+    }
 
-[data-testid="stSidebar"]
-[data-baseweb="select"] span {
-
-    color: #1F2933 !important;
-
-    -webkit-text-fill-color: #1F2933 !important;
-
-    opacity: 1 !important;
-}
-
-
-/* Flecha */
-
-[data-testid="stSidebar"]
-[data-baseweb="select"] svg {
-
-    fill: #34515E !important;
-
-    color: #34515E !important;
-
-    opacity: 1 !important;
-}
-
-
-/* =========================================================
-   MENÚS DESPLEGABLES
-========================================================= */
-
-div[data-baseweb="popover"] {
-
-    background-color: #FFFFFF !important;
-}
-
-
-div[data-baseweb="menu"] {
-
-    background-color: #FFFFFF !important;
-}
-
-
-div[data-baseweb="menu"] ul {
-
-    background-color: #FFFFFF !important;
-}
-
-
-div[role="option"] {
-
-    background-color: #FFFFFF !important;
-
-    color: #1F2933 !important;
-}
-
-
-div[role="option"] * {
-
-    color: #1F2933 !important;
-
-    opacity: 1 !important;
-}
-
-
-div[role="option"]:hover {
-
-    background-color: #DDEEF3 !important;
-
-    color: #102A36 !important;
-}
-
-
-/* =========================================================
-   CALENDARIO
-========================================================= */
-
-div[data-baseweb="calendar"] {
-
-    background-color: #FFFFFF !important;
-
-    color: #1F2933 !important;
-}
-
-
-div[data-baseweb="calendar"] * {
-
-    color: #1F2933 !important;
-
-    opacity: 1 !important;
-}
-
-
-/* =========================================================
-   MÉTRICAS
-========================================================= */
-
-[data-testid="stMetric"] {
-
-    background-color: #FFFFFF;
-
-    border: 1px solid #DCE7EC;
-
-    border-radius: 16px;
-
-    padding: 18px;
-
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-}
-
-
-[data-testid="stMetricLabel"] p {
-
-    color: #455A64 !important;
-
-    font-weight: 600 !important;
-
-    opacity: 1 !important;
-}
-
-
-[data-testid="stMetricValue"] {
-
-    color: #183B4E !important;
-
-    opacity: 1 !important;
-}
-
-
-/* =========================================================
-   CAJAS INFORMATIVAS
-========================================================= */
-
-.info-card {
-
-    background-color: #FFFFFF;
-
-    border: 1px solid #DCE7EC;
-
-    border-radius: 14px;
-
-    padding: 16px;
-
-    margin-bottom: 12px;
-
-    color: #1F2933 !important;
-
-    box-shadow: 0 3px 8px rgba(0,0,0,0.04);
-}
-
-
-/* =========================================================
-   EXPANDERS
-========================================================= */
-
-[data-testid="stExpander"] {
-
-    background-color: #FFFFFF;
-
-    border-radius: 12px;
-
-    border: 1px solid #DCE7EC;
-}
-
-
-/* =========================================================
-   TABLA
-========================================================= */
-
-[data-testid="stDataFrame"] {
-
-    background-color: #FFFFFF;
-}
-
-
-/* =========================================================
-   DIVISORES
-========================================================= */
-
-hr {
-
-    border-color: #CBDDE3 !important;
-}
-
-</style>
-""", unsafe_allow_html=True)
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 
 # =========================================================
-# CONFIGURACIÓN VISUAL PARA TODAS LAS GRÁFICAS
+# COLORES GENERALES DE LAS GRÁFICAS
 # =========================================================
 
-GRAPH_TEXT = "#172B35"
-GRAPH_SECONDARY_TEXT = "#263E49"
-GRAPH_GRID = "#D7E1E5"
+GRAPH_TEXT = "#102A36"
+GRAPH_SECONDARY_TEXT = "#29434E"
+GRAPH_GRID = "#CFDCE1"
 GRAPH_BACKGROUND = "#FFFFFF"
 
+
+# =========================================================
+# FUNCIÓN PARA DAR ESTILO A TODAS LAS GRÁFICAS
+# =========================================================
 
 def style_chart(fig):
 
     fig.update_layout(
-
         template="plotly_white",
 
         paper_bgcolor=GRAPH_BACKGROUND,
-
         plot_bgcolor=GRAPH_BACKGROUND,
 
         font=dict(
@@ -406,9 +361,11 @@ def style_chart(fig):
             size=15
         ),
 
-        title_font=dict(
-            color=GRAPH_TEXT,
-            size=21
+        title=dict(
+            font=dict(
+                color=GRAPH_TEXT,
+                size=21
+            )
         ),
 
         legend=dict(
@@ -420,65 +377,75 @@ def style_chart(fig):
 
         hoverlabel=dict(
             bgcolor="#FFFFFF",
-            bordercolor="#A9BBC3",
+            bordercolor="#90A4AE",
+
             font=dict(
-                color="#111820",
+                color="#000000",
                 size=14
             )
         )
     )
 
 
-    fig.update_xaxes(
+    # Las gráficas Pie no tienen ejes
+    axis_chart_types = {
+        "bar",
+        "histogram",
+        "scatter",
+        "box",
+        "violin"
+    }
 
-        showgrid=True,
-
-        gridcolor=GRAPH_GRID,
-
-        gridwidth=1,
-
-        zerolinecolor=GRAPH_GRID,
-
-        tickfont=dict(
-            color=GRAPH_SECONDARY_TEXT,
-            size=13
-        ),
-
-        title_font=dict(
-            color=GRAPH_TEXT,
-            size=15
-        ),
-
-        linecolor="#AEBFC6",
-
-        tickcolor="#78909C"
+    has_axes = any(
+        trace.type in axis_chart_types
+        for trace in fig.data
     )
 
 
-    fig.update_yaxes(
+    if has_axes:
 
-        showgrid=True,
+        fig.update_xaxes(
+            showgrid=True,
+            gridcolor=GRAPH_GRID,
+            gridwidth=1,
 
-        gridcolor=GRAPH_GRID,
+            zerolinecolor=GRAPH_GRID,
 
-        gridwidth=1,
+            tickfont=dict(
+                color=GRAPH_SECONDARY_TEXT,
+                size=14
+            ),
 
-        zerolinecolor=GRAPH_GRID,
+            title_font=dict(
+                color=GRAPH_TEXT,
+                size=16
+            ),
 
-        tickfont=dict(
-            color=GRAPH_SECONDARY_TEXT,
-            size=13
-        ),
+            linecolor="#90A4AE",
+            tickcolor="#607D8B"
+        )
 
-        title_font=dict(
-            color=GRAPH_TEXT,
-            size=15
-        ),
 
-        linecolor="#AEBFC6",
+        fig.update_yaxes(
+            showgrid=True,
+            gridcolor=GRAPH_GRID,
+            gridwidth=1,
 
-        tickcolor="#78909C"
-    )
+            zerolinecolor=GRAPH_GRID,
+
+            tickfont=dict(
+                color=GRAPH_SECONDARY_TEXT,
+                size=14
+            ),
+
+            title_font=dict(
+                color=GRAPH_TEXT,
+                size=16
+            ),
+
+            linecolor="#90A4AE",
+            tickcolor="#607D8B"
+        )
 
 
     return fig
@@ -495,7 +462,7 @@ CSV_PATH = (
 
 
 # =========================================================
-# CARGAR Y PREPARAR DATOS
+# CARGA DE DATOS
 # =========================================================
 
 @st.cache_data
@@ -504,7 +471,7 @@ def load_data():
     df = pd.read_csv(CSV_PATH)
 
 
-    # Fecha original en UTC
+    # Fecha
     df["timestamp"] = pd.to_datetime(
         df["timestamp"],
         utc=True,
@@ -512,14 +479,14 @@ def load_data():
     )
 
 
-    # Conversión a hora de Colombia
+    # Convertir a hora Colombia
     df["timestamp_local"] = (
         df["timestamp"]
         .dt.tz_convert("America/Bogota")
     )
 
 
-    # Variables numéricas
+    # Datos numéricos
     df["heart_rate_bpm"] = pd.to_numeric(
         df["heart_rate_bpm"],
         errors="coerce"
@@ -538,7 +505,7 @@ def load_data():
     )
 
 
-    # Estado de medición
+    # Estado
     df["measurement_status"] = (
         df["measurement_status"]
         .astype(str)
@@ -547,7 +514,7 @@ def load_data():
     )
 
 
-    # Variables auxiliares
+    # Fecha y hora auxiliares
     df["date"] = (
         df["timestamp_local"]
         .dt.date
@@ -571,7 +538,6 @@ try:
 
     df = load_data()
 
-
 except FileNotFoundError:
 
     st.error(
@@ -591,22 +557,25 @@ st.title(
 )
 
 
-st.markdown("""
-<div class="info-card">
+st.markdown(
+    """
+    <div class="info-card">
 
-<b>¿Qué muestra este dashboard?</b><br><br>
+    <b>¿Qué muestra este dashboard?</b><br><br>
 
-Este tablero permite analizar las mediciones registradas por un
-tótem IoT utilizado por estudiantes.
+    Este tablero permite analizar las mediciones registradas
+    por un tótem IoT utilizado por estudiantes.
 
-Se analizan principalmente la
-<b>frecuencia cardíaca</b>,
-la <b>saturación estimada de oxígeno</b>,
-la cantidad de usos del dispositivo y
-la calidad de las mediciones.
+    Se estudian principalmente la
+    <b>frecuencia cardíaca</b>,
+    la <b>saturación estimada de oxígeno</b>,
+    la cantidad de usos del dispositivo
+    y la calidad de las mediciones.
 
-</div>
-""", unsafe_allow_html=True)
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
 # =========================================================
@@ -619,7 +588,7 @@ st.sidebar.header(
 
 
 # =========================================================
-# FILTRO: FECHAS
+# FILTRO FECHAS
 # =========================================================
 
 min_date = df["date"].min()
@@ -627,7 +596,6 @@ max_date = df["date"].max()
 
 
 date_selection = st.sidebar.date_input(
-
     "🗓️ Rango de fechas",
 
     value=(
@@ -636,7 +604,6 @@ date_selection = st.sidebar.date_input(
     ),
 
     min_value=min_date,
-
     max_value=max_date
 )
 
@@ -652,20 +619,17 @@ if isinstance(
 
         end_date = date_selection[1]
 
-
     elif len(date_selection) == 1:
 
         start_date = date_selection[0]
 
         end_date = date_selection[0]
 
-
     else:
 
         start_date = min_date
 
         end_date = max_date
-
 
 else:
 
@@ -675,15 +639,13 @@ else:
 
 
 # =========================================================
-# FILTRO: ESTUDIANTE
+# FILTRO ESTUDIANTE
 # =========================================================
 
 student_options = (
-
     ["Todos"]
-
-    + sorted(
-
+    +
+    sorted(
         df["student_id"]
         .dropna()
         .unique()
@@ -693,19 +655,16 @@ student_options = (
 
 
 selected_student = st.sidebar.selectbox(
-
     "🎓 Estudiante",
-
     student_options
 )
 
 
 # =========================================================
-# FILTRO: ESTADO
+# FILTRO ESTADO
 # =========================================================
 
 selected_status = st.sidebar.selectbox(
-
     "✅ Estado de la medición",
 
     [
@@ -721,48 +680,38 @@ selected_status = st.sidebar.selectbox(
 # =========================================================
 
 filtered = df[
-
     (df["date"] >= start_date)
-
     &
-
     (df["date"] <= end_date)
-
 ].copy()
 
 
 if selected_student != "Todos":
 
     filtered = filtered[
-
         filtered["student_id"]
         == selected_student
-
     ]
 
 
 if selected_status == "Válidas":
 
     filtered = filtered[
-
         filtered["measurement_status"]
         == "valid"
-
     ]
 
 
 elif selected_status == "Inválidas":
 
     filtered = filtered[
-
         filtered["measurement_status"]
         == "invalid"
-
     ]
 
 
 # =========================================================
-# SI NO HAY DATOS
+# VALIDAR DATOS
 # =========================================================
 
 if filtered.empty:
@@ -776,19 +725,17 @@ if filtered.empty:
 
 
 # =========================================================
-# MEDICIONES VÁLIDAS
+# DATOS VÁLIDOS
 # =========================================================
 
 valid_filtered = filtered[
-
     filtered["measurement_status"]
     == "valid"
-
 ]
 
 
 # =========================================================
-# INDICADORES GENERALES
+# INDICADORES
 # =========================================================
 
 st.subheader(
@@ -818,7 +765,6 @@ if not valid_filtered.empty:
         .mean()
     )
 
-
 else:
 
     avg_hr = None
@@ -827,26 +773,20 @@ else:
 
 
 invalid_count = (
-
     filtered["measurement_status"]
     .eq("invalid")
     .sum()
-
 )
 
 
 invalid_percentage = (
-
     invalid_count
     / total_measurements
     * 100
-
 )
 
 
-col1, col2, col3, col4, col5 = (
-    st.columns(5)
-)
+col1, col2, col3, col4, col5 = st.columns(5)
 
 
 col1.metric(
@@ -862,7 +802,6 @@ col2.metric(
 
 
 col3.metric(
-
     "❤️ BPM promedio",
 
     f"{avg_hr:.1f}"
@@ -872,7 +811,6 @@ col3.metric(
 
 
 col4.metric(
-
     "🫁 SpO₂ promedio",
 
     f"{avg_spo2:.1f} %"
@@ -882,16 +820,14 @@ col4.metric(
 
 
 col5.metric(
-
     "⚠️ Inválidas",
-
     f"{invalid_percentage:.1f} %"
 )
 
 
 st.caption(
-    "Los promedios de BPM y SpO₂ "
-    "utilizan únicamente mediciones válidas."
+    "Los promedios de BPM y SpO₂ utilizan "
+    "únicamente mediciones válidas."
 )
 
 
@@ -909,13 +845,9 @@ st.subheader(
 
 
 measurements_day = (
-
     filtered
-
     .groupby("date")
-
     .size()
-
     .reset_index(
         name="Mediciones"
     )
@@ -923,19 +855,15 @@ measurements_day = (
 
 
 fig_day = px.bar(
-
     measurements_day,
 
     x="date",
-
     y="Mediciones",
 
     title="Cantidad de mediciones por día",
 
     labels={
-
         "date": "Fecha",
-
         "Mediciones":
         "Número de mediciones"
     },
@@ -961,8 +889,7 @@ st.plotly_chart(
 
 
 # =========================================================
-# GRÁFICAS 2 Y 3
-# BPM Y SPO2
+# GRÁFICAS BPM Y SPO2
 # =========================================================
 
 st.subheader(
@@ -974,7 +901,7 @@ graph1, graph2 = st.columns(2)
 
 
 # =========================================================
-# FRECUENCIA CARDÍACA
+# BPM
 # =========================================================
 
 with graph1:
@@ -982,7 +909,6 @@ with graph1:
     if not valid_filtered.empty:
 
         fig_hr = px.histogram(
-
             valid_filtered,
 
             x="heart_rate_bpm",
@@ -995,7 +921,6 @@ with graph1:
             ),
 
             labels={
-
                 "heart_rate_bpm":
                 "Frecuencia cardíaca (BPM)"
             },
@@ -1007,22 +932,16 @@ with graph1:
 
 
         fig_hr.update_layout(
-            yaxis_title="Cantidad de mediciones"
+            yaxis_title="Cantidad de mediciones",
+            showlegend=False
         )
 
 
         style_chart(fig_hr)
 
 
-        fig_hr.update_layout(
-            showlegend=False
-        )
-
-
         st.plotly_chart(
-
             fig_hr,
-
             use_container_width=True
         )
 
@@ -1032,7 +951,6 @@ with graph1:
             "mediciones están dentro de "
             "un rango de BPM."
         )
-
 
     else:
 
@@ -1051,7 +969,6 @@ with graph2:
     if not valid_filtered.empty:
 
         fig_spo2 = px.histogram(
-
             valid_filtered,
 
             x="spo2_percent",
@@ -1064,7 +981,6 @@ with graph2:
             ),
 
             labels={
-
                 "spo2_percent":
                 "SpO₂ estimada (%)"
             },
@@ -1076,22 +992,16 @@ with graph2:
 
 
         fig_spo2.update_layout(
-            yaxis_title="Cantidad de mediciones"
+            yaxis_title="Cantidad de mediciones",
+            showlegend=False
         )
 
 
         style_chart(fig_spo2)
 
 
-        fig_spo2.update_layout(
-            showlegend=False
-        )
-
-
         st.plotly_chart(
-
             fig_spo2,
-
             use_container_width=True
         )
 
@@ -1102,7 +1012,6 @@ with graph2:
             "mediciones de SpO₂."
         )
 
-
     else:
 
         st.info(
@@ -1111,8 +1020,7 @@ with graph2:
 
 
 # =========================================================
-# GRÁFICAS 4 Y 5
-# HORARIO Y ESTADO
+# HORARIOS Y ESTADOS
 # =========================================================
 
 st.subheader(
@@ -1124,19 +1032,15 @@ graph3, graph4 = st.columns(2)
 
 
 # =========================================================
-# USO POR HORA
+# HORARIOS
 # =========================================================
 
 with graph3:
 
     hourly = (
-
         filtered
-
         .groupby("hour")
-
         .size()
-
         .reset_index(
             name="Mediciones"
         )
@@ -1144,20 +1048,15 @@ with graph3:
 
 
     fig_hour = px.bar(
-
         hourly,
 
         x="hour",
-
         y="Mediciones",
 
         title="Mediciones según la hora del día",
 
         labels={
-
-            "hour":
-            "Hora del día",
-
+            "hour": "Hora del día",
             "Mediciones":
             "Número de mediciones"
         },
@@ -1182,9 +1081,7 @@ with graph3:
 
 
     st.plotly_chart(
-
         fig_hour,
-
         use_container_width=True
     )
 
@@ -1197,17 +1094,14 @@ with graph3:
 
 
 # =========================================================
-# VÁLIDAS E INVÁLIDAS
+# ESTADO DE MEDICIONES
 # =========================================================
 
 with graph4:
 
     status_counts = (
-
         filtered["measurement_status"]
-
         .value_counts()
-
         .reset_index()
     )
 
@@ -1219,24 +1113,18 @@ with graph4:
 
 
     status_counts["Estado"] = (
-
         status_counts["Estado"]
-
         .replace({
-
             "valid": "Válida",
-
             "invalid": "Inválida"
         })
     )
 
 
     fig_status = px.pie(
-
         status_counts,
 
         names="Estado",
-
         values="Cantidad",
 
         hole=0.55,
@@ -1246,9 +1134,7 @@ with graph4:
         color="Estado",
 
         color_discrete_map={
-
             "Válida": "#69B984",
-
             "Inválida": "#E57373"
         }
     )
@@ -1258,20 +1144,24 @@ with graph4:
 
 
     fig_status.update_traces(
+        textposition="auto",
 
         textfont=dict(
-            color="#172B35",
-            size=15
+            color="#102A36",
+            size=16
         ),
 
-        textposition="auto"
+        marker=dict(
+            line=dict(
+                color="#FFFFFF",
+                width=2
+            )
+        )
     )
 
 
     st.plotly_chart(
-
         fig_status,
-
         use_container_width=True
     )
 
@@ -1283,7 +1173,6 @@ with graph4:
 
 
 # =========================================================
-# GRÁFICA 6
 # CALIDAD DE SEÑAL
 # =========================================================
 
@@ -1296,24 +1185,18 @@ signal_data = filtered.copy()
 
 
 signal_data["Estado"] = (
-
     signal_data["measurement_status"]
-
     .replace({
-
         "valid": "Válida",
-
         "invalid": "Inválida"
     })
 )
 
 
 fig_signal = px.box(
-
     signal_data,
 
     x="Estado",
-
     y="signal_quality",
 
     color="Estado",
@@ -1324,17 +1207,13 @@ fig_signal = px.box(
     ),
 
     labels={
-
         "Estado": "Estado",
-
         "signal_quality":
         "Calidad de señal"
     },
 
     color_discrete_map={
-
         "Válida": "#69B984",
-
         "Inválida": "#E57373"
     }
 )
@@ -1349,16 +1228,14 @@ fig_signal.update_layout(
 
 
 st.plotly_chart(
-
     fig_signal,
-
     use_container_width=True
 )
 
 
 st.caption(
     "La calidad de señal se expresa entre 0 y 1. "
-    "Los valores más cercanos a 1 representan "
+    "Los valores cercanos a 1 representan "
     "una mejor calidad de señal."
 )
 
@@ -1382,44 +1259,32 @@ st.write(
 
 
 individual_base = df[
-
     (df["date"] >= start_date)
-
     &
-
     (df["date"] <= end_date)
-
 ].copy()
 
 
 if selected_status == "Válidas":
 
     individual_base = individual_base[
-
         individual_base["measurement_status"]
         == "valid"
-
     ]
 
 
 elif selected_status == "Inválidas":
 
     individual_base = individual_base[
-
         individual_base["measurement_status"]
         == "invalid"
-
     ]
 
 
 available_students = sorted(
-
     individual_base["student_id"]
-
     .dropna()
-
     .unique()
-
     .tolist()
 )
 
@@ -1430,13 +1295,9 @@ if available_students:
 
 
     if (
-
         selected_student != "Todos"
-
         and
-
         selected_student in available_students
-
     ):
 
         default_index = (
@@ -1446,7 +1307,6 @@ if available_students:
 
 
     individual_student = st.selectbox(
-
         "👤 Estudiante para seguimiento",
 
         available_students,
@@ -1458,14 +1318,10 @@ if available_students:
 
 
     student_data = (
-
         individual_base[
-
             individual_base["student_id"]
             == individual_student
-
         ]
-
         .sort_values(
             "timestamp_local"
         )
@@ -1504,7 +1360,6 @@ if available_students:
 
 
     c3.metric(
-
         "⏮️ Primera medición",
 
         first_measurement.strftime(
@@ -1514,7 +1369,6 @@ if available_students:
 
 
     c4.metric(
-
         "⏭️ Última medición",
 
         last_measurement.strftime(
@@ -1524,26 +1378,18 @@ if available_students:
 
 
     # =====================================================
-    # EVOLUCIÓN
+    # GRÁFICAS INDIVIDUALES
     # =====================================================
 
-    individual1, individual2 = (
-        st.columns(2)
-    )
+    individual1, individual2 = st.columns(2)
 
-
-    # =====================================================
-    # BPM INDIVIDUAL
-    # =====================================================
 
     with individual1:
 
         fig_ind_hr = px.line(
-
             student_data,
 
             x="timestamp_local",
-
             y="heart_rate_bpm",
 
             markers=True,
@@ -1556,7 +1402,6 @@ if available_students:
             ),
 
             labels={
-
                 "timestamp_local":
                 "Fecha y hora",
 
@@ -1568,9 +1413,7 @@ if available_students:
             },
 
             color_discrete_map={
-
                 "valid": "#D85C5C",
-
                 "invalid": "#667780"
             }
         )
@@ -1579,26 +1422,29 @@ if available_students:
         style_chart(fig_ind_hr)
 
 
+        fig_ind_hr.update_traces(
+            line=dict(
+                width=3
+            ),
+
+            marker=dict(
+                size=8
+            )
+        )
+
+
         st.plotly_chart(
-
             fig_ind_hr,
-
             use_container_width=True
         )
 
 
-    # =====================================================
-    # SPO2 INDIVIDUAL
-    # =====================================================
-
     with individual2:
 
         fig_ind_spo2 = px.line(
-
             student_data,
 
             x="timestamp_local",
-
             y="spo2_percent",
 
             markers=True,
@@ -1608,7 +1454,6 @@ if available_students:
             title="🫁 Evolución de SpO₂",
 
             labels={
-
                 "timestamp_local":
                 "Fecha y hora",
 
@@ -1620,9 +1465,7 @@ if available_students:
             },
 
             color_discrete_map={
-
                 "valid": "#448FC4",
-
                 "invalid": "#667780"
             }
         )
@@ -1631,10 +1474,19 @@ if available_students:
         style_chart(fig_ind_spo2)
 
 
+        fig_ind_spo2.update_traces(
+            line=dict(
+                width=3
+            ),
+
+            marker=dict(
+                size=8
+            )
+        )
+
+
         st.plotly_chart(
-
             fig_ind_spo2,
-
             use_container_width=True
         )
 
@@ -1659,16 +1511,10 @@ st.subheader(
 )
 
 
-# =========================================================
-# DÍA DE MAYOR USO
-# =========================================================
-
+# Día con más uso
 daily_counts = (
-
     filtered
-
     .groupby("date")
-
     .size()
 )
 
@@ -1681,16 +1527,10 @@ top_day_count = int(
 )
 
 
-# =========================================================
-# HORA DE MAYOR USO
-# =========================================================
-
+# Hora con más uso
 hour_counts = (
-
     filtered
-
     .groupby("hour")
-
     .size()
 )
 
@@ -1705,14 +1545,9 @@ top_hour_count = int(
 )
 
 
-# =========================================================
-# ESTUDIANTE MÁS FRECUENTE
-# =========================================================
-
+# Estudiante con más registros
 student_counts = (
-
     filtered["student_id"]
-
     .value_counts()
 )
 
@@ -1728,7 +1563,7 @@ top_student_count = int(
 
 
 # =========================================================
-# MOSTRAR HALLAZGOS
+# HALLAZGOS
 # =========================================================
 
 st.markdown(
@@ -1769,23 +1604,27 @@ Dentro del período analizado,
 # LIMITACIONES
 # =========================================================
 
-st.warning("""
-⚠️ **Importante sobre la interpretación de los datos**
+st.warning(
+    """
+    ⚠️ **Importante sobre la interpretación de los datos**
 
-Las mediciones de frecuencia cardíaca y SpO₂ mostradas en este
-dashboard pertenecen a un escenario educativo y no permiten,
-por sí solas, determinar el estado general de salud de una persona.
+    Las mediciones de frecuencia cardíaca y SpO₂ mostradas
+    en este dashboard pertenecen a un escenario educativo.
 
-El sensor MAX30102 utilizado en este ejercicio no debe interpretarse
-como un dispositivo médico validado.
+    Estas variables no permiten, por sí solas, determinar
+    el estado general de salud de una persona.
 
-Este dashboard no realiza diagnósticos médicos ni clasificaciones
-clínicas.
-""")
+    El sensor MAX30102 no debe interpretarse como un
+    dispositivo médico validado.
+
+    Este dashboard no realiza diagnósticos médicos
+    ni clasificaciones clínicas.
+    """
+)
 
 
 # =========================================================
-# TABLA
+# TABLA DE DATOS
 # =========================================================
 
 with st.expander(
@@ -1807,43 +1646,28 @@ with st.expander(
 
 
     table["measurement_status"] = (
-
         table["measurement_status"]
-
         .replace({
-
             "valid": "Válida",
-
             "invalid": "Inválida"
         })
     )
 
 
     table.columns = [
-
         "Fecha y hora",
-
         "Estudiante",
-
         "NFC",
-
         "Dispositivo",
-
         "BPM",
-
         "SpO₂ (%)",
-
         "Calidad de señal",
-
         "Estado"
     ]
 
 
     st.dataframe(
-
         table,
-
         use_container_width=True,
-
         hide_index=True
     )
